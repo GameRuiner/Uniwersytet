@@ -1,0 +1,8 @@
+#lang racket
+;ćw 1
+(define balance 100)
+
+(set! balance (+ balance 10))
+(set! balance (- balance 10))
+(set! balance (- balance (/ balance 2)))
+;balance {35,40,45,50}

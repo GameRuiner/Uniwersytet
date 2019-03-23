@@ -1,0 +1,18 @@
+      read  0
+      store 1
+loop: mult  1
+      store 2
+      load  1
+      store ^2
+      load  2
+      div   1
+      jzero end
+      sub   =1
+      jump  loop
+end:  load  1
+      sub   =2
+      jzero step
+
+      halt  
+step: add   =2
+      store 2

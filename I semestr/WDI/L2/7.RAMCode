@@ -1,0 +1,29 @@
+         read  1
+         load  1
+         store 2
+         add   =2
+         store 1
+read:    load  1
+         sub   =2
+         jzero reverse
+         add   =2
+
+         read  ^1
+         sub   =1
+         store 1
+         jump  read
+reverse: load  2
+         jgtz  step
+end:     halt  
+step:    mult  =0
+         add   =3
+         store 1
+step2:   load  2
+         jzero end
+         sub   =1
+         store 2
+         load  1
+         write ^1
+         add   =1
+         store 1
+         jump  step2

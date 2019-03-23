@@ -1,0 +1,40 @@
+#lang racket
+( define ( var ? t )
+(symbol ? t ) )
+
+( define ( neg ? t )
+( and ( list ? t )
+(= 2 ( length t ) )
+( eq ? 'neg ( car t ) ) ) )
+
+( define ( conj ? t )
+( and ( list ? t )
+(= 3 ( length t ) )
+( eq ? 'conj ( car t ) ) ) )
+
+( define ( disj ? t )
+( and ( list ? t )
+(= 3 ( length t ) )
+( eq ? 'disj ( car t ) ) ) )
+
+( define ( prop ? f )
+(or ( var ? f )
+( and ( neg ? f )
+( prop ? ( neg-subf f ) ) )
+( and ( disj ? f )
+( prop ? ( disj-left f ) )
+( prop ? ( disj-rght f ) ) )
+( and ( conj ? f )
+( prop ? ( conj-left f ) )
+( prop ? ( conj-rght f ) ) ) ) )
+
+
+(define (neg f)
+  (list 'neg f))
+
+(define (conj f)
+  (list 'conj f))
+
+(define (disj f)
+  (list 'disj f))
+

@@ -1,0 +1,13 @@
+#lang racket
+(define (square x) (* x x))
+(define (inc x) (+ x 1))
+;z2
+(define compose (lambda (f g )
+                  (lambda (x) (f (g x) )
+                  )))
+(define (identity x) (x))
+;z3
+(define (repeated p n)
+  (if (= n 1)
+      (lambda (x) (p x))
+      (repeated (compose p p) (- n 1)))

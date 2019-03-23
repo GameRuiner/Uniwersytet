@@ -1,0 +1,34 @@
+      read  1
+      read  2
+      load  1
+      sub   2
+      jgtz  loop
+      add   2
+      store 4
+      load  2
+      store 3
+      jump  next
+loop: add   2
+      store 3
+      load  2
+      store 4
+next: load  4
+      jgtz  tak
+      write 3
+      halt  
+tak:  load  3
+      div   4
+      mult  4
+      mult  =-1
+      add   3
+      store 3
+
+      sub   4
+      jgtz  next
+      load  3
+      store 2
+      load  4
+      store 3
+      load  2
+      store 4
+      jump  next

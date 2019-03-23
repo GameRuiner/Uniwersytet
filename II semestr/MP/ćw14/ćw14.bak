@@ -1,0 +1,8 @@
+#lang racket
+(define (make-cycle xs)
+  (define (iter ys)
+    (if (null? ys)
+        (set-mcar! ys xs)
+        (iter (cdr ys))))
+  (iter xs))
+  

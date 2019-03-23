@@ -1,0 +1,26 @@
+       read  0
+       jgtz  next
+end1:  write =1
+       halt  
+next:  sub   =1
+       jgtz  next2
+       jump  end1
+next2: store 1
+       read  0
+       read  2
+       sub   2
+
+       mult  =-1
+       jgtz  loop
+end0:  write =0
+       halt  
+loop:  load  1
+       sub   =2
+       jgtz  next2
+       add   =1
+       jgtz  next3
+       jump  end1
+next3: read  0
+       sub   2
+       jgtz  end1
+       jump  end0
