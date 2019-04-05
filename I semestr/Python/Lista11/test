@@ -1,0 +1,33 @@
+def ppn(word):
+    chars = {}
+    c = 1
+    f = word[0]
+    result='1'
+    chars[f] = c
+    word = word[1:]
+    for i in word:
+        if i in chars:
+            result +='-'+str(chars[i])
+        else:
+            c+=1
+            chars[i] = c
+            result += '-'+str(chars[i])
+    return result
+
+dic = {}
+for x in open('slowa.txt'):
+    x = x.strip()
+    k = ppn(x)
+    if k not in dic:
+        dic[k] = []
+        dic[k].append(x)
+    else:
+        dic[k].append(x)
+       
+'''
+for x in open('szyfry'):
+    x = x.strip()
+    deszyfr(x)
+'''
+
+print(dic[ppn('pwmśąwćkcźąźśyź')])
