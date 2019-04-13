@@ -1,11 +1,19 @@
-﻿using System;
+﻿// Marko Golovko
+// Pracownia PO, piątek, s. 137
+// L 2, z 1, IntStream 
+// PrimeStream
+// ciąg liczb pierwszych 
+// 2018-03-16
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Lista2Zadanie1
 {
-    class PrimeStream : IntStream
+    public class PrimeStream : IntStream
     {
+        //zwraca kolejny element ciagu
         override public int next()
         {
             if (!b) { current += 1; }
@@ -19,6 +27,8 @@ namespace Lista2Zadanie1
             }
             return current;
         }
+
+        //test czy liczba jest pierwsza 
         bool isPrime(int n)
         {
             if (n < 2)

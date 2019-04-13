@@ -1,4 +1,12 @@
-﻿using System;
+﻿// Marko Golovko
+// Pracownia PO, piątek, s. 137
+// L 2, z 1, IntStream 
+// RandomWordStream
+// ciąg napisów o dlugościach liczb pierwszuch  
+// 2018-03-16
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,6 +17,8 @@ namespace Lista2Zadanie1
     {
         PrimeStream ps = new PrimeStream();
         int length;
+
+        //zwraca kolejny element ciagu
         public string next()
         {
             length = ps.next();
