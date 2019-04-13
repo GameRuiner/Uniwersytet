@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Dictionary">
+      <HintPath>..\..\Dictionary\Dictionary\bin\Debug\netcoreapp2.0\Dictionary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
