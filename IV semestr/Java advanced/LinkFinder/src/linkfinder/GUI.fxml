@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox prefHeight="695.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="linkfinder.GUIController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="696.0" prefWidth="551.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TextField id="URLAdress" fx:id="URLAdress" layoutX="33.0" layoutY="25.0" promptText="Past URL adress" />
+            <Button id="StartBtn" fx:id="StartBtn" layoutX="87.0" layoutY="70.0" mnemonicParsing="false" onAction="#StartBtnAction" text="Start" />
+            <TextArea id="TextView" fx:id="TextView" editable="false" layoutX="260.0" layoutY="25.0" prefHeight="659.0" prefWidth="486.0" />
+            <ListView id="URLList" fx:id="URLList" editable="true" layoutX="7.0" layoutY="101.0" prefHeight="334.0" prefWidth="250.0" />
+            <ListView fx:id="hostList" layoutX="7.0" layoutY="446.0" prefHeight="238.0" prefWidth="250.0" />
+         </children>
+      </Pane>
+   </children>
+</VBox>

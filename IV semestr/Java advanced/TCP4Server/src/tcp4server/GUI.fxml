@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tcp4server.GUIController">
+   <children>
+      <Button fx:id="startBtn" layoutX="141.0" layoutY="149.0" mnemonicParsing="false" onAction="#btnStart" prefHeight="71.0" prefWidth="106.0" text="Start">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="stopBtn" layoutX="390.0" layoutY="149.0" mnemonicParsing="false" onAction="#btnStop" prefHeight="71.0" prefWidth="106.0" text="Stop">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="253.0" layoutY="72.0" prefHeight="77.0" prefWidth="128.0" text="Stopped">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

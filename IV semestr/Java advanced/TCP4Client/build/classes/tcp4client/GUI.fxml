@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tcp4client.GUIController">
+   <children>
+      <ListView fx:id="lstView" layoutX="300.0" layoutY="44.0" prefHeight="346.0" prefWidth="200.0" />
+      <TextField fx:id="txtField" layoutX="44.0" layoutY="44.0" />
+      <Button fx:id="btnGo" layoutX="215.0" layoutY="44.0" mnemonicParsing="false" onAction="#actionGo" text="Go" />
+   </children>
+</AnchorPane>
