@@ -1,0 +1,12 @@
+{ "function": "closest_nodes", "body": { "ilat": 51.107883, "ilon": 17.038538}}
+{ "function": "node", "body": { "node": 12345, "lat": 51.111044, "lon": 17.053423, "description": "a nice place to relax, strongly recommended"}}
+{ "function": "node", "body": { "node": 12346, "lat": 51.198127, "lon": 16.919484, "description": "another nice place, is a must-see"}}
+{ "function": "catalog", "body": { "version": 1, "nodes": [12345, 12345, 12346, 12345]}}
+{ "function": "catalog", "body": { "version": 2, "nodes": [12346, 12345, 12346]}}
+{ "function": "trip", "body": { "cyclist": "piotrek", "date": "2020-06-16", "version": 1}}
+{ "function": "trip", "body": { "cyclist": "paweł", "date": "2020-06-16", "version": 1}}
+{ "function": "trip", "body": { "cyclist": "janek", "date": "2020-06-15", "version": 2}}
+{ "function": "closest_nodes", "body": { "ilat": 51.107883, "ilon": 17.038538}}
+{ "function": "party", "body": { "icyclist": "piotrek", "date": "2020-06-17"}}
+{ "function": "guests", "body": { "node": 12345, "date": "2020-06-16"}}
+{ "function": "cyclists", "body": { "limit": 2}}

@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+%%%\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % page settings
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage[polish]{babel}
+%%% fix for \lll
+\let\babellll\lll
+\let\lll\relax 
+\usepackage[T1]{fontenc}
+
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[boxed]{algorithm2e}
+
+
+\title{Zadanie 2}
+\author{Marko Golovko}
+\date{\today}
+
+\begin{document}
+\maketitle
+Wyznaczamy współczynnik korelacji między zachorowaniami. Dobranie odpowiedniego punktu początkowego, polega na wyznaczeniu dnia środkowego między pierwszym wypadkiem a zgonem. Dla każdego państwa liczymy korelację między zmiennymi określającymi wypadki a zgony. \\ 
+Współczynnik korelacji ma wzór:
+	$$ r = \frac{1}{n-1}\sum{(\frac{x_{i}-\overline{x}}{s_{x}})(\frac{y_{i}-\overline{y}}{s_{y}})} $$
+Gdzie $n$ jest iliością obserwowanych dni. \\
+$x_{i}$ ilość wypadków w i-ty dzień. $y_{i}$ ilość zgonów w i-ty dzień. \\
+$$ \overline{x} = \frac{\sum{x_i}}{n} \quad \quad \overline{y} = \frac{\sum{y_i}}{n}$$
+$$ s_{x} = \sqrt{\frac{\sum{(x_{i}-\overline{x})^2}}{n-1}} \quad \quad s_{y} = \sqrt{\frac{\sum{(y_{i}-\overline{y})^2}}{n-1}} $$
+Wyniki obliczeń dołączam w oddzielnym pliku.
+\cleardoublepage
+\lstinputlisting[language=Python,
+firstline=30, lastline=76]{z2.py}
+\end{document}

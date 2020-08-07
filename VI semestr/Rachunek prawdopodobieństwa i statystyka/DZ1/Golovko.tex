@@ -1,0 +1,70 @@
+
+\documentclass[12pt]{article}
+%%%\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % page settings
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage[polish]{babel}
+%%% fix for \lll
+\let\babellll\lll
+\let\lll\relax 
+\usepackage[T1]{fontenc}
+
+
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[boxed]{algorithm2e}
+
+\renewcommand{\algorithmcfname}{Algorytm}
+\SetKwInput{KwData}{\textbf{Dane}}
+\SetKwInput{KwResult}{\textbf{Wynik}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\title{Zadanie 1}
+\author{Marko Golovko}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+Standardowy rozkład normalny ma gęstość określoną wzorem
+	$$ f(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}, x\in\mathbb{R}$$
+Dla dystrybuanty otrzymujemy wyrażenie:
+	$$ \Phi(t) = \int_{-\infty}^{t} \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} dx,$$
+Ponieważ gęstość jest funkcją
+parzystą zatem zachodzi związek $\Phi(t) = 1 - \Phi(-t)$.
+\paragraph{Dowód:}
+$$\Phi(t)= \int_{-\infty}^{t}f(x)dx = \int_{-\infty}^{\infty}f(x)dx - \int_{t}^{\infty}f(x)dx$$
+Po pierwzse $ \int_{-\infty}^{\infty}f(x)dx = 1 $, oraz z tego że $f(x) = f(-x),$ wynika 
+$$\int_{t}^{\infty}f(x)dx =  \int_{-\infty}^{-t}f(x)dx = \Phi(-t)$$
+$$\Phi(t) = 1 - \Phi(-t)$$
+\flushright\qedsymbol
+\flushleft
+$$ \Phi(t) = \int_{-\infty}^{t} \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2} {2}} dx,$$
+Rozbijemy całkę na dwie części.
+$$ \Phi(t) = \frac{1}{\sqrt{2\pi}}(\int_{-\infty}^{0} e^{-\frac{x^2} {2}} dx + \int_{0}^{t} e^{-\frac{x^2} {2}} dx)$$
+$$ \int_{-\infty}^{\infty} e^{-\frac{x^2} {2}} dx = \sqrt{2\pi} $$
+\paragraph{Dowód:}
+$$ \int_{-\infty}^{\infty} e^{-\frac{x^2} {2}} dx = 2\int_{0}^{\infty} e^{-\frac{x^2} {2}}dx = \sqrt{2}\int_{0}^{\infty} y^{\frac{-1}{2}}e^{-y}dy = \sqrt{2}\Gamma(1/2) $$
+Warto zauważyć, że robimy zamianę $y = \frac{x^{2}}{2}$ zmiennych w tym dowodzie.\\
+$\Gamma(1/2) = \sqrt{(\pi)} $ Wiemy to z ćwiczeń ( lista 5 zadanie 4).
+$$ \int_{-\infty}^{\infty} e^{-\frac{x^2} {2}} dx = \sqrt{2\pi} $$
+\flushright\qedsymbol
+\flushleft
+$$ \int_{-\infty}^{0} e^{-\frac{x^2} {2}} dx = \frac{\sqrt{2\pi}}{2} $$
+Niech $ G(t) = \int_{0}^{t} e^{-\frac{x^2} {2}} dx $ wtedy 
+$$ \Phi(t) = \frac{1}{\sqrt{2\pi}}(\frac{\sqrt{2\pi}}{2} + G(t)) $$
+$$ \Phi(t) = \frac{1}{2} + \frac{1}{\sqrt{2\pi}}G(t) $$
+Redukujemy zatem zadanie do postaci: \\
+\quad Dla ustalonego t > 0 obliczyć wartość całki $$ G(t) = \int_{0}^{t} e^{-\frac{x^2} {2}} dx $$
+Rozwiązanie opiera się na złożonym wzorze trapezów i metodzie Romberga.
+\cleardoublepage
+\lstinputlisting[language=Python,
+firstline=1, lastline=38]{z5.jl}
+\BlankLine
+Dla $t=\{1,2,3\}$ mamy wartości $\Phi(t) = \{0.8413, 0.9772, 0.9987\}$ odpowiednio.
+
+\end{document}

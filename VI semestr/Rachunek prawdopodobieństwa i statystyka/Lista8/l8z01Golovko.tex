@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+%%%\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % page settings
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage[polish]{babel}
+%%% fix for \lll
+\let\babellll\lll
+\let\lll\relax 
+\usepackage[T1]{fontenc}
+
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[boxed]{algorithm2e}
+
+
+\title{Lista 8 Zadanie 1}
+\author{Marko Golovko}
+\date{\today}
+
+\begin{document}
+\maketitle
+Wyznaczamy prostą regresji temperatury(Y) względem wysokości npm(X). \\
+$\hat{y_{i}}=ax_{i}+b $ prosta regresji, gdzie  
+$$a=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}
+         {\sum_{i=1}^{n}(x_{i}-\overline{x})^2}$$  
+$$ b = \overline{y} - a\overline{x}$$ 
+Wyniki obliczeń: $\overline{x} = 172.9375; \overline{y} = 8.09375; 
+a = 0.000218586; b = 8.05594$    
+\lstinputlisting[language=Python,
+firstline=4, lastline=29]{z.py}
+\end{document}

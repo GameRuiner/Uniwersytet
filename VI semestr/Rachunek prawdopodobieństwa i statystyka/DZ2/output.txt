@@ -1,0 +1,122 @@
+Dla panstwa ESP z dnia 2020-02-18
+Wspolczynnik korelacji 0.9444117027049063
+Dla panstwa ITA z dnia 2020-02-11
+Wspolczynnik korelacji 0.9297226115606686
+Dla panstwa GER z dnia 2020-02-18
+Wspolczynnik korelacji 0.5461764287925451
+Dla panstwa UK z dnia 2020-02-18
+Wspolczynnik korelacji 0.9432377843813365
+Dla panstwa FRA z dnia 2020-02-02
+Wspolczynnik korelacji 0.729731214078719
+Dla panstwa TUR z dnia 2020-03-15
+Wspolczynnik korelacji 0.924939999094491
+Dla panstwa RUS z dnia 2020-02-28
+Wspolczynnik korelacji 0.9885174727910043
+Dla panstwa BEL z dnia 2020-02-25
+Wspolczynnik korelacji 0.7428745373038196
+Dla panstwa NED z dnia 2020-03-03
+Wspolczynnik korelacji 0.8085124131785539
+Dla panstwa SUI z dnia 2020-03-01
+Wspolczynnik korelacji 0.4373596130118348
+Dla panstwa POR z dnia 2020-03-10
+Wspolczynnik korelacji 0.6813480028365437
+Dla panstwa IRE z dnia 2020-03-06
+Wspolczynnik korelacji 0.3742865887650406
+Dla panstwa SWE z dnia 2020-02-23
+Wspolczynnik korelacji 0.7945394970631796
+Dla panstwa AUT z dnia 2020-03-05
+Wspolczynnik korelacji 0.18638786451888953
+Dla panstwa ISR z dnia 2020-03-07
+Wspolczynnik korelacji 0.5816150964272789
+Dla panstwa POL z dnia 2020-03-08
+Wspolczynnik korelacji 0.7719792662930162
+Dla panstwa ROU z dnia 2020-03-10
+Wspolczynnik korelacji 0.7880483329415304
+Dla panstwa DEN z dnia 2020-03-07
+Wspolczynnik korelacji 0.7173390207266321
+Dla panstwa BLR z dnia 2020-03-16
+Wspolczynnik korelacji 0.6563433613146363
+Dla panstwa NOR z dnia 2020-03-06
+Wspolczynnik korelacji -0.03027779682327378
+Dla panstwa UKR z dnia 2020-03-09
+Wspolczynnik korelacji 0.8852881487265536
+Dla panstwa CZE z dnia 2020-03-12
+Wspolczynnik korelacji 0.28190649310025684
+Dla panstwa SRB z dnia 2020-03-15
+Wspolczynnik korelacji 0.584203956868993
+Dla panstwa FIN z dnia 2020-02-25
+Wspolczynnik korelacji 0.40518203348641557
+Dla panstwa LUX z dnia 2020-03-08
+Wspolczynnik korelacji 0.09683054576937736
+Dla panstwa MDA z dnia 2020-03-14
+Wspolczynnik korelacji 0.7487179612680659
+Dla panstwa GRE z dnia 2020-03-05
+Wspolczynnik korelacji 0.45865623746666695
+Dla panstwa HUN z dnia 2020-03-10
+Wspolczynnik korelacji 0.6598376991261308
+Dla panstwa KAZ z dnia 2020-03-21
+Wspolczynnik korelacji 0.5442649464272757
+Dla panstwa CRO z dnia 2020-03-09
+Wspolczynnik korelacji 0.13155798941138291
+Dla panstwa ISL z dnia 2020-03-11
+Wspolczynnik korelacji 0.17299159818859333
+Dla panstwa UZB z dnia 2020-03-22
+Wspolczynnik korelacji -0.04698654910126493
+Dla panstwa EST z dnia 2020-03-12
+Wspolczynnik korelacji 0.05869172585513737
+Dla panstwa AZE z dnia 2020-03-10
+Wspolczynnik korelacji 0.20285544031376315
+Dla panstwa ARM z dnia 2020-03-14
+Wspolczynnik korelacji 0.48066462101207635
+Dla panstwa BIH z dnia 2020-03-13
+Wspolczynnik korelacji 0.4618189206796405
+Dla panstwa LTU z dnia 2020-03-10
+Wspolczynnik korelacji 0.23162126640240321
+Dla panstwa SLO z dnia 2020-03-11
+Wspolczynnik korelacji -0.01617126053532203
+Dla panstwa SVK z dnia 2020-03-22
+Wspolczynnik korelacji 0.3063723228336191
+Dla panstwa MKD z dnia 2020-03-10
+Wspolczynnik korelacji 0.312391851852053
+Dla panstwa BUL z dnia 2020-03-10
+Wspolczynnik korelacji 0.4067962498695123
+Dla panstwa CYP z dnia 2020-03-17
+Wspolczynnik korelacji 0.2332825560993809
+Dla panstwa LAT z dnia 2020-03-19
+Wspolczynnik korelacji -0.14456073188711782
+Dla panstwa AND z dnia 2020-03-13
+Wspolczynnik korelacji 0.06671655023563279
+Dla panstwa ALB z dnia 2020-03-11
+Wspolczynnik korelacji 0.24562325430514922
+Dla panstwa KGZ z dnia 2020-03-26
+Wspolczynnik korelacji 0.39292718851196184
+Dla panstwa SNM z dnia 2020-03-04
+Wspolczynnik korelacji -0.06285802557929791
+Dla panstwa MLT z dnia 2020-03-24
+Wspolczynnik korelacji 0.20071501953652687
+Dla panstwa GEO z dnia 2020-03-17
+Wspolczynnik korelacji 0.0074184398127070846
+Dla panstwa MNE z dnia 2020-03-22
+Wspolczynnik korelacji 0.07046874475697285
+Dla panstwa LIE z dnia 2020-03-20
+Wspolczynnik korelacji -0.036852979006583034
+Dla panstwa MON z dnia 2020-03-23
+Wspolczynnik korelacji 0.8942201864740863
+Dla panstwa CVA z dnia 2020-04-01
+Wspolczynnik korelacji nie da sie policzyc 0
+Dla panstwa KOS z dnia 2020-03-19
+Wspolczynnik korelacji 0.2534001833869305
+Dla panstwa MAN z dnia 2020-03-27
+Wspolczynnik korelacji -0.16939954831237025
+Dla panstwa JER z dnia 2020-03-19
+Wspolczynnik korelacji -0.16533949252044633
+Dla panstwa GUE z dnia 2020-03-21
+Wspolczynnik korelacji 0.33180253612059246
+Dla panstwa FAR z dnia 2020-04-02
+Wspolczynnik korelacji nie da sie policzyc 0
+Dla panstwa GIB z dnia 2020-03-20
+Wspolczynnik korelacji 0.3333215341000072
+Dla panstwa GRN z dnia 2020-04-07
+Wspolczynnik korelacji nie da sie policzyc 0
+Dla panstwa USA z dnia 2020-02-13
+Wspolczynnik korelacji 0.9141156911129676

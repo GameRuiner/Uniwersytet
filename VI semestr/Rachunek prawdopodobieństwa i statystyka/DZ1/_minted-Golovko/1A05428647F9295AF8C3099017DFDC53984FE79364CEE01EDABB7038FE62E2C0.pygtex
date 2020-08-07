@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function} \PYG{n}{f}\PYG{p}{(}\PYG{n}{τ}\PYG{p}{)}
+\PYG{k}{return} \PYG{n+nb}{π} \PYG{o}{*} \PYG{n}{τ}
+\PYG{k}{end}
+\end{Verbatim}

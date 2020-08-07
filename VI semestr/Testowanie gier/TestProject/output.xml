@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.7.3 on win32)" generated="20200530 15:48:16.673" rpa="false">
+<suite id="s1" name="Test1" source="D:\uniwer\VI semestr\TG\TestProject\TestSuit\test1.robot">
+<test id="s1-t1" name="Open new home page">
+<kw name="Open Browser To Home Page" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:16.998" level="INFO">Opening browser 'chrome' to base url 'file:///D:/uniwer/VI%20semestr/TG/TestProject/page/index.html'.</msg>
+<status status="PASS" starttime="20200530 15:48:16.998" endtime="20200530 15:48:19.501"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:16.997" endtime="20200530 15:48:19.502"></status>
+</kw>
+<kw name="When user press „Open home page in new window”" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOME BUTTON ID}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:19.504" level="INFO">Clicking element 'new_window_button'.</msg>
+<status status="PASS" starttime="20200530 15:48:19.504" endtime="20200530 15:48:19.654"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:19.503" endtime="20200530 15:48:19.655"></status>
+</kw>
+<kw name="Then new home page should be open in new window" library="resource">
+<kw name="Select Window" library="SeleniumLibrary">
+<doc>DEPRECATED in SeleniumLibrary 4.0. , use `Switch Window` instead.</doc>
+<arguments>
+<arg>NEW</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:19.656" endtime="20200530 15:48:19.678"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${tempB}</var>
+</assign>
+<msg timestamp="20200530 15:48:20.693" level="INFO">${tempB} = Home</msg>
+<status status="PASS" starttime="20200530 15:48:19.679" endtime="20200530 15:48:20.693"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${tempB}</arg>
+<arg>Home</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:20.694" endtime="20200530 15:48:20.694"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:19.655" endtime="20200530 15:48:20.694"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200530 15:48:20.695" endtime="20200530 15:48:22.923"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:16.997" endtime="20200530 15:48:22.924" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Contact form">
+<kw name="Open Browser To Home Page" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:22.927" level="INFO">Opening browser 'chrome' to base url 'file:///D:/uniwer/VI%20semestr/TG/TestProject/page/index.html'.</msg>
+<status status="PASS" starttime="20200530 15:48:22.926" endtime="20200530 15:48:25.417"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:22.926" endtime="20200530 15:48:25.417"></status>
+</kw>
+<kw name="When user go to Contact page" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT LINK}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:25.420" level="INFO">Clicking link 'Contact'.</msg>
+<status status="PASS" starttime="20200530 15:48:25.419" endtime="20200530 15:48:25.665"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${CONTACT FORM ID}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:25.665" endtime="20200530 15:48:25.693"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:25.418" endtime="20200530 15:48:25.693"></status>
+</kw>
+<kw name="Then new form should be empty" library="resource">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${CONTACT NAME ID}</arg>
+<arg>value</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:25.731" level="INFO">Element 'name' attribute 'value' contains value ''.</msg>
+<status status="PASS" starttime="20200530 15:48:25.695" endtime="20200530 15:48:25.731"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${CONTACT SURNAME ID}</arg>
+<arg>value</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:25.757" level="INFO">Element 'surname' attribute 'value' contains value ''.</msg>
+<status status="PASS" starttime="20200530 15:48:25.731" endtime="20200530 15:48:25.757"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${CONTACT EMAIL ID}</arg>
+<arg>value</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:25.784" level="INFO">Element 'email' attribute 'value' contains value ''.</msg>
+<status status="PASS" starttime="20200530 15:48:25.758" endtime="20200530 15:48:25.784"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${CONTACT MESSAGE ID}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:25.784" level="INFO">Verifying element 'message' contains exact text ''.</msg>
+<status status="PASS" starttime="20200530 15:48:25.784" endtime="20200530 15:48:25.814"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:25.694" endtime="20200530 15:48:25.815"></status>
+</kw>
+<kw name="When user fill contact form" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT NAME ID}</arg>
+<arg>Marko</arg>
+</arguments>
+<msg timestamp="20200530 15:48:25.816" level="INFO">Typing text 'Marko' into text field 'name'.</msg>
+<status status="PASS" starttime="20200530 15:48:25.815" endtime="20200530 15:48:25.937"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT SURNAME ID}</arg>
+<arg>Golovko</arg>
+</arguments>
+<msg timestamp="20200530 15:48:25.939" level="INFO">Typing text 'Golovko' into text field 'surname'.</msg>
+<status status="PASS" starttime="20200530 15:48:25.938" endtime="20200530 15:48:26.058"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT EMAIL ID}</arg>
+<arg>markgolovko@gmail.com</arg>
+</arguments>
+<msg timestamp="20200530 15:48:26.060" level="INFO">Typing text 'markgolovko@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20200530 15:48:26.059" endtime="20200530 15:48:26.219"></status>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${CONTACT COUNTRY ID}</arg>
+<arg>France</arg>
+</arguments>
+<msg timestamp="20200530 15:48:26.220" level="INFO">Selecting options from selection list 'country' by label France.</msg>
+<status status="PASS" starttime="20200530 15:48:26.219" endtime="20200530 15:48:26.315"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT MESSAGE ID}</arg>
+<arg>Hello</arg>
+</arguments>
+<msg timestamp="20200530 15:48:26.317" level="INFO">Typing text 'Hello' into text field 'message'.</msg>
+<status status="PASS" starttime="20200530 15:48:26.315" endtime="20200530 15:48:26.430"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200530 15:48:26.703" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200530 15:48:26.430" endtime="20200530 15:48:26.704"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:25.815" endtime="20200530 15:48:26.704"></status>
+</kw>
+<kw name="When submit contact form" library="resource">
+<kw name="Submit Form" library="SeleniumLibrary">
+<doc>Submits a form identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT FORM ID}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:26.705" level="INFO">Submitting form 'contact_form'.</msg>
+<status status="PASS" starttime="20200530 15:48:26.705" endtime="20200530 15:48:26.739"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:26.704" endtime="20200530 15:48:26.739"></status>
+</kw>
+<kw name="Then appear alert and user approve it" library="resource">
+<kw name="Alert Should Be Present" library="SeleniumLibrary">
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" starttime="20200530 15:48:26.741" endtime="20200530 15:48:26.747"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:26.740" endtime="20200530 15:48:26.747"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200530 15:48:26.748" endtime="20200530 15:48:28.882"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:22.925" endtime="20200530 15:48:28.883" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Gallery">
+<kw name="Open Browser To Home Page" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:28.888" level="INFO">Opening browser 'chrome' to base url 'file:///D:/uniwer/VI%20semestr/TG/TestProject/page/index.html'.</msg>
+<status status="PASS" starttime="20200530 15:48:28.887" endtime="20200530 15:48:31.612"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:28.886" endtime="20200530 15:48:31.612"></status>
+</kw>
+<kw name="When user go to Gallery page" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${Gallery LINK}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:31.614" level="INFO">Clicking link 'Gallery'.</msg>
+<status status="PASS" starttime="20200530 15:48:31.614" endtime="20200530 15:48:33.647"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${GALLERY LOCATOR}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.647" endtime="20200530 15:48:33.688"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:31.613" endtime="20200530 15:48:33.688"></status>
+</kw>
+<kw name="Then user see 11 images" library="resource">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${IMAGE LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20200530 15:48:33.712" level="INFO">${count} = 11</msg>
+<status status="PASS" starttime="20200530 15:48:33.690" endtime="20200530 15:48:33.712"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${count} == 11</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.712" endtime="20200530 15:48:33.713"></status>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>${IMAGE LOCATOR}</arg>
+</arguments>
+<assign>
+<var>@{imgs}</var>
+</assign>
+<msg timestamp="20200530 15:48:33.724" level="INFO">@{imgs} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="2209d18b14d0fb5a7e7d400b4eedf93d", element="326bdee0-2a8c-41cc-aa16-df9f480bba82")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20200530 15:48:33.713" endtime="20200530 15:48:33.725"></status>
+</kw>
+<kw name="${img} IN [ @{imgs} ]" type="for">
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;326bdee0-2a8c-41cc-aa16-df9f480bba82&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.725" endtime="20200530 15:48:33.733"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.725" endtime="20200530 15:48:33.733"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;6f17e55a-8c9a-48e8-bab7-891a3d9ea66a&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.733" endtime="20200530 15:48:33.743"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.733" endtime="20200530 15:48:33.743"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;2cb36e59-1145-421d-b7e8-9d00bba769c1&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.743" endtime="20200530 15:48:33.749"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.743" endtime="20200530 15:48:33.749"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;8e201405-4c0c-488c-8512-4f9b531d25d0&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.750" endtime="20200530 15:48:33.759"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.750" endtime="20200530 15:48:33.759"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;ecca9634-35cc-4791-93e0-8c8df1afddcd&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.759" endtime="20200530 15:48:33.767"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.759" endtime="20200530 15:48:33.767"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;b91b244a-c34a-43e1-85af-67eef3ebbd73&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.768" endtime="20200530 15:48:33.774"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.767" endtime="20200530 15:48:33.775"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;321ef83c-28d8-4b7c-b718-452d14f9d62c&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.775" endtime="20200530 15:48:33.782"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.775" endtime="20200530 15:48:33.782"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;75fb68de-ea9c-4047-9818-ea1bf7e18760&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.782" endtime="20200530 15:48:33.791"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.782" endtime="20200530 15:48:33.791"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;293da26c-326f-46e0-a1a9-5a41f4a9fd80&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.791" endtime="20200530 15:48:33.797"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.791" endtime="20200530 15:48:33.797"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;86379fe5-bfe9-4603-bb0e-11248e79b215&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.797" endtime="20200530 15:48:33.804"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.797" endtime="20200530 15:48:33.804"></status>
+</kw>
+<kw name="${img} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;2209d18b14d0fb5a7e7d400b4eedf93d&quot;, element=&quot;e51722cc-09ee-4000-ab9b-bf60def4e820&quot;)&gt;" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${img.get_attribute('src')}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:33.804" endtime="20200530 15:48:33.810"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.804" endtime="20200530 15:48:33.810"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.725" endtime="20200530 15:48:33.811"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:33.689" endtime="20200530 15:48:33.811"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200530 15:48:33.811" endtime="20200530 15:48:36.033"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:28.885" endtime="20200530 15:48:36.034" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Navigation bar">
+<kw name="Open Browser To Home Page" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:36.038" level="INFO">Opening browser 'chrome' to base url 'file:///D:/uniwer/VI%20semestr/TG/TestProject/page/index.html'.</msg>
+<status status="PASS" starttime="20200530 15:48:36.037" endtime="20200530 15:48:38.541"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:36.037" endtime="20200530 15:48:38.541"></status>
+</kw>
+<kw name="user click ${CONTACT LINK} and go to ${CONTACT LINK}" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${link}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:38.544" level="INFO">Clicking link 'Contact'.</msg>
+<status status="PASS" starttime="20200530 15:48:38.543" endtime="20200530 15:48:38.703"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${page title}</var>
+</assign>
+<msg timestamp="20200530 15:48:38.712" level="INFO">${page title} = Contact</msg>
+<status status="PASS" starttime="20200530 15:48:38.703" endtime="20200530 15:48:38.712"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${page title}</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:38.712" endtime="20200530 15:48:38.713"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:38.542" endtime="20200530 15:48:38.714"></status>
+</kw>
+<kw name="user click ${GALLERY LINK} and go to ${GALLERY LINK}" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${link}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:38.718" level="INFO">Clicking link 'Gallery'.</msg>
+<status status="PASS" starttime="20200530 15:48:38.717" endtime="20200530 15:48:40.897"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${page title}</var>
+</assign>
+<msg timestamp="20200530 15:48:41.111" level="INFO">${page title} = Gallery</msg>
+<status status="PASS" starttime="20200530 15:48:40.897" endtime="20200530 15:48:41.111"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${page title}</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:41.112" endtime="20200530 15:48:41.112"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:38.715" endtime="20200530 15:48:41.113"></status>
+</kw>
+<kw name="user click ${HOME LINK} and go to ${HOME LINK}" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${link}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:41.116" level="INFO">Clicking link 'Home'.</msg>
+<status status="PASS" starttime="20200530 15:48:41.115" endtime="20200530 15:48:41.406"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${page title}</var>
+</assign>
+<msg timestamp="20200530 15:48:41.415" level="INFO">${page title} = Home</msg>
+<status status="PASS" starttime="20200530 15:48:41.406" endtime="20200530 15:48:41.415"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${page title}</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:41.416" endtime="20200530 15:48:41.417"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:41.113" endtime="20200530 15:48:41.422"></status>
+</kw>
+<kw name="user click ${NEWS LINK} and go to ${NEWS LINK}" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${link}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:41.425" level="INFO">Clicking link 'News'.</msg>
+<status status="PASS" starttime="20200530 15:48:41.424" endtime="20200530 15:48:41.569"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${page title}</var>
+</assign>
+<msg timestamp="20200530 15:48:41.576" level="INFO">${page title} = News</msg>
+<status status="PASS" starttime="20200530 15:48:41.569" endtime="20200530 15:48:41.576"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${page title}</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:41.576" endtime="20200530 15:48:41.577"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:41.423" endtime="20200530 15:48:41.577"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200530 15:48:41.578" endtime="20200530 15:48:44.927"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:36.036" endtime="20200530 15:48:44.927" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Contact form area">
+<kw name="Open Browser To Home Page" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:44.930" level="INFO">Opening browser 'chrome' to base url 'file:///D:/uniwer/VI%20semestr/TG/TestProject/page/index.html'.</msg>
+<status status="PASS" starttime="20200530 15:48:44.930" endtime="20200530 15:48:47.476"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:44.929" endtime="20200530 15:48:47.476"></status>
+</kw>
+<kw name="Contact form area" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT LINK}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:47.478" level="INFO">Clicking link 'Contact'.</msg>
+<status status="PASS" starttime="20200530 15:48:47.478" endtime="20200530 15:48:47.675"></status>
+</kw>
+<kw name="Get Element Size" library="SeleniumLibrary">
+<doc>Returns width and height of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTACT FORM ID}</arg>
+</arguments>
+<assign>
+<var>${size}</var>
+</assign>
+<msg timestamp="20200530 15:48:47.718" level="INFO">${size} = (977, 609)</msg>
+<status status="PASS" starttime="20200530 15:48:47.675" endtime="20200530 15:48:47.719"></status>
+</kw>
+<kw name="Size Area" library="MyLibrary">
+<arguments>
+<arg>${size}</arg>
+</arguments>
+<assign>
+<var>${area}</var>
+</assign>
+<msg timestamp="20200530 15:48:47.719" level="INFO">${area} = 594993</msg>
+<status status="PASS" starttime="20200530 15:48:47.719" endtime="20200530 15:48:47.719"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${area} &gt; 300000</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:47.720" endtime="20200530 15:48:47.720"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:47.477" endtime="20200530 15:48:47.720"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200530 15:48:47.721" endtime="20200530 15:48:49.897"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:44.929" endtime="20200530 15:48:49.897" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Home page links">
+<kw name="Open Browser To Home Page" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${INDEX}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200530 15:48:49.900" level="INFO">Opening browser 'chrome' to base url 'file:///D:/uniwer/VI%20semestr/TG/TestProject/page/index.html'.</msg>
+<status status="PASS" starttime="20200530 15:48:49.900" endtime="20200530 15:48:52.396"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:49.899" endtime="20200530 15:48:52.396"></status>
+</kw>
+<kw name="All links with id should be defirent" library="resource">
+<kw name="Get All Links" library="SeleniumLibrary">
+<doc>Returns a list containing ids of all links found in current page.</doc>
+<assign>
+<var>${links}</var>
+</assign>
+<msg timestamp="20200530 15:48:52.516" level="INFO">${links} = ['', '', '', '', 'new_window_button', '', '', '', '']</msg>
+<status status="PASS" starttime="20200530 15:48:52.399" endtime="20200530 15:48:52.516"></status>
+</kw>
+<kw name="Links Has Different Id" library="MyLibrary">
+<arguments>
+<arg>${links}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200530 15:48:52.516" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20200530 15:48:52.516" endtime="20200530 15:48:52.516"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" starttime="20200530 15:48:52.516" endtime="20200530 15:48:52.517"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:52.397" endtime="20200530 15:48:52.517"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200530 15:48:52.517" endtime="20200530 15:48:54.640"></status>
+</kw>
+<status status="PASS" starttime="20200530 15:48:49.899" endtime="20200530 15:48:54.641" critical="yes"></status>
+</test>
+<doc>A test suite with page tests.
+
+</doc>
+<status status="PASS" starttime="20200530 15:48:16.677" endtime="20200530 15:48:54.643"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0">Critical Tests</stat>
+<stat pass="6" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" id="s1" name="Test1">Test1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

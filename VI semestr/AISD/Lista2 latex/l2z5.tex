@@ -1,0 +1,71 @@
+
+\documentclass[12pt]{article}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % page settings
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage[polish]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage[boxed]{algorithm2e}
+\renewcommand{\algorithmcfname}{Algorytm}
+\SetKwInput{KwData}{\textbf{Dane}}
+\SetKwInput{KwResult}{\textbf{Wynik}}
+
+\title{Lista 2. Zadanie 5}
+\author{Marko Golovko}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Treść}
+
+Udowodnij poprawność algorytmu Boruvki (Sollina).
+
+
+\subsection*{Idea rozwiązania}
+
+Algorytm Boruvki wyznacza minimalne drzewo rozpinające dla grafu nieskierowanego ważonego, o ile jest on spójny. Innymi słowy, znajduje drzewo zawierające wszystkie wierzchołki grafu, którego waga jest najmniejsza możliwa. Jest to przykład algorytmu zachłannego.
+
+\subsection*{Algorytm}
+ 
+Algorytm działa poprawnie przy założeniu, że wszystkie krawędzie w grafie mają różne wagi. Jeśli tak nie jest, można np. przypisać każdej krawędzi unikatowy indeks i jeśli dojdzie do porównania dwóch krawędzi o takich samych wagach, wybrać tę, która otrzymała niższy numer. 
+ 
+\begin{enumerate} 
+  \item Dla każdego wierzchołka $v$ w grafie $G$ przejrzyj zbiór incydentnych z nim krawędzi. Dołóż najlżejszą z nich do rozwiązania (zbioru $E'$). 
+  \item Po tym etapie graf tymczasowego rozwiązania powinien zawierać nie więcej niż ${\frac {|V|}{2}}$  spójnych składowych. Utwórz graf $G'$ w którym wierzchołki stanowiące spójne składowe zostaną ze sobą „sklejone” (nowe wierzchołki będziemy nazywać roboczo $superwierzchołkami$).  
+  \item Dopóki nie otrzymamy jednej spójnej składowej, wywołujemy kroki 1–2, za graf $G$ podstawiając graf $G'$.
+\end{enumerate}
+Po zakończeniu algorytmu $G'$ jest minimalnym drzewem rozpinającym.
+
+\subsection*{Dowód poprawności}
+\subsubsection*{Lemat 1}
+\textit {W każdym momencie działania algorytmu, oraz po jego zakończeniu w \textbf{E'} nie będzie cyklu.}
+\paragraph*{Dowód.} 
+
+Załóżmy nie wprost, że podczas działania algorytmu w którymś etapie pojawiła się spójna składowa, w której jest cykl. Oznaczmy ją jako \textit{\textbf{S}} Rozważmy następujące sytuacje:
+\begin{itemize}
+	\item \textit{\textbf{S}} powstała przez połączenie dwóch superwierzchołków ${v_1}$ i ${v_2}$. Oznacza to, że do zbioru \textit{\textbf{E'}} zostały dołączone krawędzie ${e_i}$ i ${e_j}$ Ponieważ ${e_i}$ została dołączona jako najlżejsza krawędź incydentna do ${v_1}$ więc  $C(e_{i})<C(e_{j})$. Ale skoro ${e_j}$ została dołączona jako najlżejsza krawędź incydentna do ${v_2}$ to musi zachodzić $C(e_{j})<C(e_{i})$ (Pamiętajmy, że w grafie nie ma krawędzi o takiej samej wadze) – sprzeczność.
+	\item \textit{\textbf{S}} powstała przez połączenie się trzech lub więcej superwierzchołków. Podzielmy powstały cykl $C$ na następujące części: niech ${v_1}$,${v_2}$,${v_3}$,\dots,${v_l}$ będą kolejnymi superwierzchołkami należącymi do $C$ a ${e_1}$,${e_2}$,${e_3}$,\dots,${e_l}$ ędą kolejnymi krawędziami należącymi do $C$, które zostały dodane w zakończonym właśnie etapie algorytmu. W $C$ krawędzie ${e_i}$ oraz superwierzchołki ${v_i}$ występują na przemian.  zasady działania algorytmu możemy stwierdzić, że aby powstał taki cykl, musi zachodzić $C(e_{1})<C(e_{2})<\dots<C(e_{l-1})<C(e_{l})<C(e_{1})$ - sprzeczność. 
+\end{itemize}
+
+\subsubsection*{Lemat 2}
+\textit {W każdym etapie działania algorytmu otrzymujemy dla każdego superwierzchołka minimalne drzewo rozpinające}
+
+\paragraph*{Dowód.}
+Gdy zostanie zakończony etap 1: \\
+Załóżmy, że istnieje taki superwierzchołek $V_i$,  który 
+nie jest minimalnym drzewem rozpinającym poddrzewa złożonego z wierzchołków należących do $V_i$. Weźmy więc takie minimalne drzewo rozpinające $\textbf{T}$. Istnieje krawędź ${e_i}$ taka, że
+ ${e_{i}\in E(V_{i})\land e_{i}\not \in E(T)}$. Dodajmy $e_{i}$. W $\textbf{T}$ powstał cykl. Ponieważ ${e_i}$ jest incydenta do pewnego wierzchołka z tego cyklu, istnieje więc inna krawędź  ${e'_i}$ incydentna do tego samego wierzchołka. Jednak z tego, że ${e_{i}\in E(V_{i})}$ wynika, że $C(e_{i})<C(e'_{i})$. Jeśli usuniemy krawędź ${e'_i}$ z $\textbf{T}$ otrzymamy mniejsze drzewo rozpinające, co jest sprzeczne z założeniem o minimalności $\textbf{T}$. 
+ \BlankLine
+ Gdy zostanie zakończony etap 2: \\
+ Z poprawności etapu 1 wiemy, że istnieje takie wywołanie etapu 2, w którym każdy z superwierzchołków jest minimalnym drzewem rozpinającym. Jest to choćby pierwsze wywołanie. Załóżmy zatem, że dla pewnego wywołania tego etapu otrzymano superwierzchołki będące minimalnymi drzewami rozpinającymi, jednak scaliło przynajmniej dwa z nich w taki sposób, że dało się otrzymać mniejsze drzewo rozpinające.
+ \BlankLine
+ Niech etap $k$-ty będzie pierwszym takim etapem, w którym coś się popsuło. Niech $E'_{1}$ będzie zbiorem krawędzi przed wywołaniem etapu $k$, a $E'_{2}$ będzie zbiorem krawędzi po jego wywołaniu. Niech $\textbf{T}$ będzie minimalnym drzewem rozpinającym takim, że $V(T)=V(V_{i})$ , ale że  że $E(T)\not =E(V_{i})$ Istnieje więc krawędź $e_{i}\in E(V_{i})\land e_{i}\not \in E(T)$
+ \paragraph*{Fakt:} Krawędź $e_{i}$ została dodana podczas $k$-tego 
+ wywołania. (Nie może należeć do $E'_{1}$, gdyż inaczej superwierzchołek do którego by należała nie byłby minimalnym drzewem rozpinającym, co jest sprzeczne z dowodem dla pierwszego etapu i założeniem, że wywołanie $k$-te jest najmniejszym wywołaniem, które zwróciło nieoptymalne drzewa) \\
+  \BlankLine
+ Dodajmy krawędź  $e_{i}$ do $E(T)$. W $\textbf{T}$ powstał cykl. Ponieważ $e_{i}$ jest najmniejszą krawędzią incydentną do pewnego superwierzchołka z tego cyklu, istnieje więc inna krawędź incydenta do tego samego superwierzchołka. Jednak jej waga jest większa niż waga krawędzi  $e_{i}$, zatem zastąpienie jej krawędzią $e_{i}$ da nam mniejsze drzewo rozpinające co jest sprzeczne z założeniem o optymalności $\textbf{T}$.
+\subsection*{Złożoność algorytmu}
+Łatwo udowodnić, że każdym kolejnym wywołaniu liczba wierzchołków zmaleje co najmniej dwukrotnie – zatem wywołań tych będzie co najwyżej $\log V$. Złożoność obliczeniowa całości zależy więc od sposobu implementacji kroków 1, 2 algorytmu. Zastosowanie w implementacji struktury zbiorów rozłącznych pozwala osiągnąć złożoność na poziomie $O(E\log V)$. Można zmodyfikować go tak, aby osiągnąć złożoność $O(E\log V-V)$ – algorytm działa wtedy znacznie szybciej dla grafów rzadkich; dla grafów gęstych modyfikacja nie daje dużych zysków czasowych.
+\end{document}
