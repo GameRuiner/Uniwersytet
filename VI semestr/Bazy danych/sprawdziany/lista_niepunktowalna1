@@ -1,0 +1,234 @@
+1.
+
+SELECT nazwisko
+
+FROM uzytkownik JOIN grupa USING (kod_uz)
+
+      JOIN przedmiot_semestr USING (kod_przed_sem)
+
+      JOIN semestr USING (semestr_id)
+
+      JOIN przedmiot USING (kod_przed)
+
+WHERE przedmiot.nazwa='Matematyka dyskretna (M)'
+
+      AND rodzaj_zajec='c'
+
+      AND semestr.nazwa='Semestr zimowy 2017/2018';
+      
+SELECT nazwisko
+FROM (uzytkownik JOIN grupa ON uzytkownik.kod_uz = grupa.kod_uz) JOIN przedmiot_semestr ON przedmiot_semestr.kod_przed_sem = grupa.kod_przed_sem JOIN przedmiot ON przedmiot.kod_przed = przedmiot_semestr.kod_przed JOIN semestr ON semestr.semestr_id = przedmiot_semestr.semestr_id
+WHERE semestr = 0 AND rodzaj_zajec = 'c' AND przedmiot.nazwa = 'Matematyka dyskretna (M)' AND semestr.nazwa = 'Semestr zimowy 2017/2018'
+ORDER BY nazwisko;
+
+2.
+
+SELECT imie, nazwisko FROM (SELECT imie, nazwisko, data
+FROM uzytkownik JOIN wybor USING (kod_uz) JOIN grupa USING (kod_grupy) JOIN przedmiot_semestr USING (kod_przed_sem) JOIN przedmiot USING (kod_przed) JOIN semestr USING (semestr_id) 
+WHERE rodzaj_zajec = 'w' AND przedmiot.nazwa = 'Matematyka dyskretna (M)' AND semestr.nazwa = 'Semestr zimowy 2017/2018' 
+ORDER BY data
+LIMIT 1) AS foo;
+
+3.
+
+SELECT EXTRACT(day FROM w1.data-w2.data)
+FROM uzytkownik JOIN wybor w1  USING (kod_uz) JOIN wybor w2 USING(kod_grupy) JOIN grupa USING (kod_grupy) JOIN przedmiot_semestr USING (kod_przed_sem) JOIN przedmiot USING (kod_przed) JOIN semestr USING (semestr_id) WHERE rodzaj_zajec = 'w' AND przedmiot.nazwa = 'Matematyka dyskretna (M)' AND semestr.nazwa = 'Semestr zimowy 2017/2018' AND w1.data>w2.data ORDER BY date_part desc LIMIT 1;
+
+4.
+
+SELECT COUNT(DISTINCT nazwa)
+FROM przedmiot JOIN przedmiot_semestr USING (kod_przed) JOIN grupa USING (kod_przed_sem)                             
+WHERE rodzaj = 'o' AND rodzaj_zajec = 'e';
+
+5.
+
+SELECT COUNT(distinct nazwisko)
+FROM uzytkownik JOIN grupa USING (kod_uz)
+      JOIN przedmiot_semestr USING (kod_przed_sem)
+      JOIN semestr USING (semestr_id)
+      JOIN przedmiot USING (kod_przed)
+WHERE przedmiot.rodzaj='o'
+      AND rodzaj_zajec='c'
+      AND semestr.nazwa LIKE 'Semestr zimowy%';
+
+6.
+
+SELECT distinct nazwa
+FROM przedmiot JOIN przedmiot_semestr USING (kod_przed) JOIN grupa USING (kod_przed_sem) JOIN uzytkownik USING (kod_uz)
+WHERE nazwisko = 'Urban'
+ORDER BY nazwa;
+
+7.
+
+SELECT COUNT(nazwisko)
+FROM uzytkownik
+WHERE nazwisko LIKE 'Kabacki%';
+
+8.
+
+SELECT COUNT(distinct (imie, nazwisko))
+FROM uzytkownik JOIN wybor w1 USING (kod_uz) JOIN wybor w2 USING (kod_uz) JOIN grupa g1 ON (w1.kod_grupy = g1.kod_grupy) JOIN grupa g2 ON (w2.kod_grupy = g2.kod_grupy) JOIN przedmiot_semestr ps1 ON (g1.kod_przed_sem = ps1.kod_przed_sem) JOIN przedmiot_semestr ps2 ON (g2.kod_przed_sem = ps2.kod_przed_sem)  JOIN przedmiot p1 ON (p1.kod_przed = ps1.kod_przed) JOIN przedmiot p2 ON (p2.kod_przed = ps2.kod_przed) 
+WHERE w1.kod_uz = w2.kod_uz AND p1.nazwa = 'Algorytmy i struktury danych (M)' AND p1.nazwa = p2.nazwa AND ps1.semestr_id <> ps2.semestr_id
+;
+
+9.
+
+SELECT semestr_id FROM (SELECT COUNT(kod_przed), semestr_id
+FROM semestr JOIN przedmiot_semestr USING (semestr_id) JOIN przedmiot USING(kod_przed)
+WHERE rodzaj = 'o'
+GROUP BY semestr_id
+ORDER BY count
+LIMIT 1) AS ID;
+
+10.
+
+ELECT COUNT(kod_grupy)
+FROM grupa
+      JOIN przedmiot_semestr USING (kod_przed_sem)
+      JOIN przedmiot USING (kod_przed)
+      JOIN semestr USING (semestr_id)
+WHERE semestr.nazwa='Semestr zimowy 2017/2018'
+      AND przedmiot.nazwa like 'Logika dla informatyk_w'
+      AND (rodzaj_zajec='c' OR rodzaj_zajec='C');
+
+11.
+
+SELECT semestr_id FROM (SELECT COUNT(kod_przed), semestr_id
+FROM semestr JOIN przedmiot_semestr USING (semestr_id) JOIN przedmiot USING(kod_przed)
+WHERE rodzaj = 'o'
+GROUP BY semestr_id
+ORDER BY count DESC
+LIMIT 1) AS ID;
+
+12.
+
+SELECT COUNT(nazwa)                                 
+FROM przedmiot
+WHERE nazwa LIKE '%(ang.)';
+
+13.
+
+SELECT CAST(data AS date)
+FROM wybor JOIN grupa USING (kod_grupy) JOIN przedmiot_semestr USING (kod_przed_sem) JOIN semestr USING (semestr_id)
+WHERE semestr.nazwa = 'Semestr zimowy 2016/2017'
+ORDER BY data
+LIMIT 1;
+
+SELECT CAST(data AS date)
+FROM wybor JOIN grupa USING (kod_grupy) JOIN przedmiot_semestr USING (kod_przed_sem) JOIN semestr USING (semestr_id)
+WHERE semestr.nazwa = 'Semestr zimowy 2016/2017'
+ORDER BY data DESC
+LIMIT 1;
+
+14.
+
+(SELECT przedmiot.kod_przed
+FROM przedmiot 
+WHERE rodzaj = 'k') EXCEPT (SELECT przedmiot.kod_przed 
+FROM przedmiot_semestr JOIN przedmiot USING (kod_przed)
+WHERE rodzaj = 'k');
+
+15.
+
+SELECT COUNT(kod_grupy)
+FROM grupa JOIN uzytkownik USING (kod_uz) 
+WHERE imie LIKE 'P%' AND nazwisko = 'Kanarek' AND rodzaj_zajec = 'r';
+
+16.
+
+SELECT COUNT(kod_grupy)
+FROM grupa JOIN uzytkownik USING (kod_uz) JOIN przedmiot_semestr USING (kod_przed_sem) JOIN przedmiot USING (kod_przed) 
+WHERE imie LIKE 'W%' AND nazwisko = 'Charatonik' AND przedmiot.nazwa = 'Logika dla informatyków';
+
+17.
+
+SELECT distinct w1.kod_uz
+FROM wybor w1, wybor w2,
+      grupa g1, grupa g2,
+      przedmiot_semestr ps1, przedmiot_semestr ps2
+WHERE g1.kod_grupy=w1.kod_grupy
+      AND g1.kod_przed_sem=ps1.kod_przed_sem
+      AND g2.kod_grupy=w2.kod_grupy
+      AND g2.kod_przed_sem=ps2.kod_przed_sem
+      AND w1.kod_uz=w2.kod_uz
+      AND g1.rodzaj_zajec='w'
+      AND g2.rodzaj_zajec='w'
+      AND ps1.kod_przed=12
+      AND ps2.kod_przed=12
+      AND ps1.kod_przed_sem<ps2.kod_przed_sem;
+
+18.
+
+(SELECT wybor.kod_uz
+
+ FROM wybor
+
+      JOIN grupa USING (kod_grupy)
+
+      JOIN przedmiot_semestr USING (kod_przed_sem)
+
+ WHERE semestr_id=32)
+
+INTERSECT  
+
+(SELECT wybor.kod_uz
+
+ FROM wybor
+
+      JOIN grupa USING (kod_grupy)
+
+      JOIN przedmiot_semestr USING (kod_przed_sem)
+
+ WHERE semestr_id=33)
+
+INTERSECT  
+
+(SELECT wybor.kod_uz
+
+ FROM wybor
+
+      JOIN grupa USING (kod_grupy)
+
+      JOIN przedmiot_semestr USING (kod_przed_sem)
+
+ WHERE semestr_id=27)
+
+INTERSECT  
+
+(SELECT wybor.kod_uz
+
+ FROM wybor
+
+      JOIN grupa USING (kod_grupy)
+
+      JOIN przedmiot_semestr USING (kod_przed_sem)
+
+ WHERE semestr_id=28)
+
+INTERSECT  
+
+(SELECT wybor.kod_uz
+
+ FROM wybor
+
+      JOIN grupa USING(kod_grupy)
+
+      JOIN przedmiot_semestr USING(kod_przed_sem)
+
+ WHERE semestr_id=38)
+
+INTERSECT  
+
+(SELECT wybor.kod_uz
+
+ FROM wybor
+
+      JOIN grupa USING(kod_grupy)
+
+      JOIN przedmiot_semestr USING(kod_przed_sem)
+
+ WHERE semestr_id=39);
+
+
+
+
