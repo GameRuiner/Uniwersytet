@@ -1,3 +1,3 @@
 # Uniwersytet
 
-Here I downloaded some of my programs from university
+My university projects and programs 
