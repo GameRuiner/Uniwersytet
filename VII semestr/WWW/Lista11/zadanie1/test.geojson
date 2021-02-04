@@ -1,0 +1,14 @@
+{"type":"FeatureCollection", "features":[ 
+{"type":"Feature","properties":{"beer": "2", "date": "14.03.20"},"geometry":{"type":"Point","coordinates":[17.037414, 51.116199]}},
+{"type":"Feature","properties":{"beer": "4", "date": "24.08.17"},"geometry":{"type":"Point","coordinates":[17.062814, 51.112755]}},
+{"type":"Feature","properties":{"beer": "5", "date": "14.12.18"},"geometry":{"type":"Point","coordinates":[17.033062, 51.109444]}},
+{"type":"Feature","properties":{"beer": "2", "date": "14.08.20"},"geometry":{"type":"Point","coordinates":[17.029339, 51.109066]}},
+{"type":"Feature","properties":{"beer": "3", "date": "14.08.19"},"geometry":{"type":"Point","coordinates":[17.061426, 51.112645]}},
+{"type":"Feature","properties":{"beer": "1", "date": "14.08.17"},"geometry":{"type":"Point","coordinates":[17.023062, 51.108444]}},
+{"type":"Feature","properties":{"beer": "2", "date": "14.03.20"},"geometry":{"type":"Point","coordinates":[17.037414, 51.126199]}},
+{"type":"Feature","properties":{"beer": "4", "date": "24.08.17"},"geometry":{"type":"Point","coordinates":[17.042814, 51.112755]}},
+{"type":"Feature","properties":{"beer": "5", "date": "14.12.18"},"geometry":{"type":"Point","coordinates":[17.013062, 51.129444]}},
+{"type":"Feature","properties":{"beer": "2", "date": "14.08.20"},"geometry":{"type":"Point","coordinates":[17.019339, 51.189066]}},
+{"type":"Feature","properties":{"beer": "3", "date": "14.08.19"},"geometry":{"type":"Point","coordinates":[17.041426, 51.102645]}},
+{"type":"Feature","properties":{"beer": "1", "date": "14.08.17"},"geometry":{"type":"Point","coordinates":[17.053062, 51.198444]}}  
+]}

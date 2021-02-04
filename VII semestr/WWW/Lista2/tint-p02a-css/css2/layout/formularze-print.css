@@ -1,0 +1,46 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+
+table {
+	padding: 0px;
+}
+
+tr.wymagane td.clabel {
+	font-weight: bold;
+	text-align: right;
+	text-decoration: underline;
+	padding: 6px 8px 6px 6px;
+}
+tr.wymagane td.cinput {
+	padding: 6px 6px 6px 6px;
+}
+
+tr.opcjonalne td.clabel {
+	font-weight: bold;
+	text-align: right;
+	padding: 6px 8px 6px 6px;
+}
+tr.opcjonalne td.cinput {
+	padding: 6px 6px 6px 6px;
+}
+
+input.tekst {
+	border-width: 0px;
+	border-bottom: solid 1px black;
+}
+
+input:focus {
+	color: black;
+	background-color: #ffffcc;
+}
+
+td.wyslij { text-align: center; }
+
+input.wyslij { display: none; }
+
+select { display: none; }
+input.ukryj { display: none; }
+
+#pusty { display: block; width: 12em; border-bottom: solid 1px black; }

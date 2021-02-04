@@ -1,0 +1,14 @@
+div#container {
+    max-width: 1000px;
+}
+div#first-column,
+div#third-column {
+    /* Correct double-margin bug */
+    display: inline;
+}
+div#content {
+    margin: 3px 205px 3px 205px;
+}
+div#first-column {
+    margin-left: -202px;
+}

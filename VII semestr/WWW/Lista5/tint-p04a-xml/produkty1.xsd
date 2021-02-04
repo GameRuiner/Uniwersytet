@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<xs:element name="dostawy">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="dostawa" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="data_dostawy" type="xs:date"/>	    
+            <xs:element name="produkt" maxOccurs="unbounded">
+	      <xs:complexType>
+	        <xs:sequence>
+	          <xs:element name="nazwa" type="xs:string"/>
+	          <xs:element name="ilosc" type="xs:integer"/>
+	          <xs:element name="jednostka">
+		    <xs:simpleType>
+		      <xs:restriction base="xs:string">
+		        <xs:enumeration value="szt."/>
+			<xs:enumeration value="kg"/>
+			<xs:enumeration value="dkg"/>
+		      </xs:restriction>
+		    </xs:simpleType>
+		  </xs:element>
+	          <xs:element name="cena">
+	            <xs:simpleType>
+		      <xs:restriction base="xs:decimal">
+		        <xs:fractionDigits value="2"/>
+		      </xs:restriction>
+		    </xs:simpleType>
+	          </xs:element>
+	        </xs:sequence>
+	        <xs:attribute name="produktid" use="required">
+		  <xs:simpleType>
+		    <xs:restriction base="xs:string">
+		      <xs:pattern value="[0-9]{5}"/>
+		    </xs:restriction>
+		  </xs:simpleType>
+		</xs:attribute>
+	      </xs:complexType>
+	    </xs:element>
+            <xs:element name="dostawca">
+	      <xs:complexType>
+	        <xs:sequence>
+	          <xs:element name="nazwa" type="xs:string"/>
+	          <xs:element name="adres" type="xs:string"/>
+                  <xs:element name="tel_stacjonarny" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		  <xs:element name="tel_komorkowy" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        </xs:sequence>
+	      </xs:complexType>
+	    </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

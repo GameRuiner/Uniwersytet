@@ -1,0 +1,21 @@
+Name:    ii.uni.wroc.pl
+Address:  156.17.4.11
+Aliases:  www.ii.uni.wroc.pl
+
+Non-authoritative answer:
+Name:    www.uj.edu.pl
+Address:  149.156.169.67
+
+set type=mx
+
+Non-authoritative answer:
+www.ii.uni.wroc.pl      canonical name = ii.uni.wroc.pl
+ii.uni.wroc.pl  MX preference = 10, mail exchanger = ASPMX2.GOOGLEMAIL.COM
+ii.uni.wroc.pl  MX preference = 1, mail exchanger = ASPMX.L.GOOGLE.COM
+ii.uni.wroc.pl  MX preference = 5, mail exchanger = ALT1.ASPMX.L.GOOGLE.COM
+ii.uni.wroc.pl  MX preference = 5, mail exchanger = ALT2.ASPMX.L.GOOGLE.COM
+ii.uni.wroc.pl  MX preference = 10, mail exchanger = ASPMX3.GOOGLEMAIL.COM
+
+Non-authoritative answer:
+www.uj.edu.pl   MX preference = 0, mail exchanger = mailin1a.srv.uj.edu.pl
+www.uj.edu.pl   MX preference = 0, mail exchanger = mailin1b.srv.uj.edu.pl

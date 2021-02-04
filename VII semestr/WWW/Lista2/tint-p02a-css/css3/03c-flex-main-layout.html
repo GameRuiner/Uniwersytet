@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<title>Simple flex layout</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="fonts/Fonts.css" />
+<style>
+body {
+	color: #fff;
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	font-size: 80%;
+	height: 100vh;
+}
+
+header, nav, article, aside, footer { padding: 20px; }
+
+main {
+	display: flex;
+	height: 100%;
+}
+header {
+	background-color: red;
+	
+}
+nav {
+	background-color: green;
+}
+article {
+	background-color: purple;
+	flex: 2 2 12em;
+}
+aside {
+	background-color: blue;
+}
+footer {
+	background-color: orange;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+	<h1>Nagłówek</h1>
+</header>
+
+<main>
+	<nav>
+		<h1>Nawigacja</h1>
+	</nav>
+	<article>
+		<h1>Artykuł</h1>
+	</article>
+	<aside>
+		<h1>Sidebar</h1>
+	</aside>
+</main>
+
+<footer>
+	<h1>Stopka</h1>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+	<script type='text/javascript'>
+    function GetMap() {
+        var map = new Microsoft.Maps.Map('#myMap', {
+            credentials: 'Agk36i7miymtjmyLvbAZueyrBfZaMHtgaZMbKAd43bxIRbUgXUUE_I-yNL1cppzO',
+            mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+            center: new Microsoft.Maps.Location(51, 17),
+            zoom: 8
+        });
+        
+        var locs = Microsoft.Maps.TestDataGenerator.getLocations(1000, map.getBounds());
+
+        //Load the HeatMap module.
+        Microsoft.Maps.loadModule('Microsoft.Maps.HeatMap', function () {
+            var heatmap = new Microsoft.Maps.HeatMapLayer(locs, {
+                intensity: 0.45,
+                radius: 10000,
+                unit: 'meters', 
+                colorGradient: 	{
+                  '0': 'Navy',
+                  '0.25': 'Blue',
+                  '0.5': 'Green',
+                  '0.75': 'Yellow',
+                  '1': 'Red'
+               }
+            });
+            map.layers.insert(heatmap);
+        });
+    }
+    </script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+</head>
+<body>
+    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+</body>
+</html>

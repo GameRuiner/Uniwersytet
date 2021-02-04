@@ -1,0 +1,147 @@
+@import "normalize.css";
+
+body {
+    margin: 0;
+    font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+
+.navbar {
+   padding: 10px;
+   justify-content: space-between;
+   background: #343A40;
+   color: rgba(255,255,255,.5);
+}
+
+
+.navbar a {
+     text-decoration: none;
+     color: rgba(255,255,255,.5);
+     padding: 8px;
+}
+
+.main-content a {
+     text-decoration: none;
+     color: rgba(255,255,255,.5);
+     padding: 8px;
+}
+
+span{
+     padding: 8px;
+}
+
+a:hover {
+     text-decoration: none;
+     color: #D8DBCE;
+}
+
+.flex-container {
+  display: flex;
+  
+}
+
+.container {
+   background: #00709E;
+}
+
+.main-content {
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-left: auto;
+   margin-right: auto;
+   flex-direction: column;
+}
+
+.display-1 {
+   font-size: calc(1.44rem + 2.28vw);
+   font-weight: 300;
+   line-height: 1.2;
+}
+
+.display-3 {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: calc(1.35rem + 1.2vw);
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.news-item {
+   margin: 32px 0;
+   padding: 64px;
+   background: #F8F9FA;
+}
+
+.news-header {
+   justify-content: space-between;
+}
+
+.news-date {
+    color: var(--dark);
+    font-style: italic;
+    display: block;
+}
+
+.news-author {
+    font-style: italic;
+    font-variant: small-caps;
+    font-size: 120%;
+}
+
+.news-item:hover {
+    transform: scale(1.01, 1.01);
+    transition: transform 250ms;
+}
+
+.btn {
+    display: block;
+    float: right;
+    color: #fff;
+    background-color: #00669e;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #004d78;
+}
+
+.row-container {
+    margin-top: 3rem;
+    justify-content: space-around;
+    font-size: 1.125rem;
+    font-weight: 300;
+    align-items: flex-end; 
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-radius: .25rem;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+footer {
+   
+   padding-top: 5rem;
+
+}
+.footer {
+   padding: 1rem 15px 1rem 15px;
+   background-color: #F8F9FA;
+   margin-right: auto;
+   margin-left: auto;
+}

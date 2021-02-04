@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "ul": {
+          "type": "object",
+          "properties": {
+            "li": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "li"
+          ]
+        },
+        "input": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "ul",
+        "input"
+      ]
+    }
+  },
+  "required": [
+    "body"
+  ]
+}

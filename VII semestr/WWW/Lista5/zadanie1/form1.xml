@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+
+<body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <ul name="items">
+     <li>Coffee. Coffee With Milk</li>
+     <li>Tea. Teapot</li>
+     <li>Milk. Tea With Milk</li>
+     <li>Lemonade</li>
+   </ul>
+     
+   <input name="searchphrace"></input>
+</body>

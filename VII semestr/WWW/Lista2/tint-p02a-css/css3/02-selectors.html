@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<title>Simple page</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="fonts/Fonts.css" />
+<style>
+#first li:first-child { background-color: red; }
+#first li:nth-child(2) { background-color: green; }
+#first li:last-child { background-color: blue; }
+
+#second li:nth-child(3n) { background-color: red; }
+#second li:nth-child(3n+1) { background-color: green; }
+#second li:nth-child(3n+2) { background-color: blue; }
+
+#third li:not(:first-child):not(:last-child) { background-color: pink; }
+
+p::selection { background-color: red; border: 1px solid blue; }
+
+:root { background: lightgray; }
+
+p:empty { padding: 10px; border: solid 1px green }
+
+
+
+</style>
+</head>
+<body>
+
+<ul id="first">
+<li>AAA</li>
+<li>BBB</li>
+<li>CCC</li>
+</ul>
+
+<ul id="second">
+<li>AAA</li>
+<li>BBB</li>
+<li>CCC</li>
+<li>DDD</li>
+<li>EEE</li>
+<li>FFF</li>
+</ul>
+
+<ul id="third">
+<li>AAA</li>
+<li>BBB</li>
+<li>CCC</li>
+<li>DDD</li>
+<li>EEE</li>
+<li>FFF</li>
+</ul>
+
+
+<p>Wielki tekst o niczym</p>
+<p></p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+li:focus {
+    outline:solid 1px green;
+}

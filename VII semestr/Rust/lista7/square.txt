@@ -1,0 +1,7 @@
+fd 50
+left 90
+fd 50
+right 270
+fd 50
+right 90
+bk 50

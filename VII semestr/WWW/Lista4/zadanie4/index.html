@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Zadanie 4</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+  
+<div id="dialog-confirm" title="Empty the recycle bin?">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
+
+ 
+<div id="dialog-form" title="Create new user">
+  <p class="validateTips">All form fields are required.</p>
+ 
+  <form>
+    <fieldset>
+      <label for="name">Imię</label>
+      <input type="text" name="name" id="name" value="Jane" class="text ui-widget-content ui-corner-all">
+      <label for="surname">Nazwisko</label>
+      <input type="text" name="surname" id="surname" value="Smith" class="text ui-widget-content ui-corner-all">
+      <label for="city">Miasto</label>
+      <input type="text" name="city" id="city" value="Wrocław" class="text ui-widget-content ui-corner-all">      
+      <label for="postal-code">Kod pocztowy</label>
+      <input type="text" name="postal-code" id="postal-code" value="61-018" class="text ui-widget-content ui-corner-all">
+      <label for="birth-date">Data urodzenia</label>
+      <input type="text" value="21-10-2000" id="birth-date">
+ 
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
+ 
+ 
+<div id="users-contain" class="ui-widget">
+  <h1>Existing Users:</h1>
+  <table id="users" class="ui-widget ui-widget-content">
+    <thead>
+      <tr class="ui-widget-header">
+        <th>imię</th>
+        <th>nazwisko</th>
+        <th>miasto</th>        
+        <th>kod pocztowy</th>
+        <th>data urodzenia</th>
+        <th>X</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="tr0">
+        <td>John</td>
+        <td>Doe</td>
+        <td>Wrocław</td>
+        <td>53-363</td>
+        <td>21-10-2020</td>
+        <td><a href='#' id="remove0">Usuń</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button id="create-user">Create new user</button>
+   
+  
+  
+  </body>
+</html>

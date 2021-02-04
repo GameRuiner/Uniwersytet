@@ -1,0 +1,167 @@
+
+\documentclass[12pt]{article}
+%%%\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % page settings
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage{latexsym}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+%\usepackage{vhistory}
+\usepackage[owncaptions]{vhistory}
+
+
+\usepackage[T1]{fontenc}
+
+\usepackage{epigraph}
+\setlength{\parskip}{1em}
+\title{SpeedCheck. Koncepcja wykonania systemu}
+\author{Marko Golovko. Yurii Purdenko}
+\date{\today}
+
+
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\renewcommand{\vhhistoryname}{Historia zmian}
+\newcommand{\MG}{Marko Golovko}
+\begin{versionhistory}
+  \renewcommand{\vhhistoryname}{Histria zmian}
+  \renewcommand{\vhversionname}{Numer wersji}  
+  \renewcommand{\vhdatename}{Data} 
+  \renewcommand{\vhauthorname}{Autor} 
+  \renewcommand{\vhchangename}{Opis}
+  \vhEntry{0.1}{21.11.20}{MG}{Utworzenie dokumentu}
+  \vhEntry{0.2}{21.11.20}{YP}{Przypadki użycia}
+  \vhEntry{0.3}{21.11.20}{MG}{UI}
+  \vhEntry{0.4}{23.11.20}{YP}{Schemat bazy danych}
+  \vhEntry{0.5}{23.11.20}{MG}{Ryzyka}
+  \vhEntry{0.6}{23.11.20}{YP}{Ocena zgodności z tablicą koncepcyjną}
+  \vhEntry{0.7}{24.11.20}{MG}{Model konceptualny}
+  \vhEntry{1.0}{24.11.20}{YP}{Architektura}
+\end{versionhistory}
+
+\tableofcontents
+
+\section{Przypadki użycia}
+	
+	\subsection{Logowanie/Rejestracja}
+	\begin{itemize}
+	\item klient wchodzi na stronę systemu SpeedCheck
+	\item klient widzi stronę Logowania/Rejestracji
+	\item klient jest zarejestrowany, wprowadza dane do logowania
+	\item klient nie jest zarejestrowany, przechodzi do strony rejestracji i wprowadza wymagane dane oraz czeka na weryfikację danych (imie, nazwisko, e-mail, numer telefonu, dolącza dokument tózsamości oraz dokument na swój samochód)
+	\item otwiera się glówna strona systemu SpeedCheck 
+	\end{itemize}
+	
+	\subsection{Wyszukiwanie samochodów}
+	\begin{itemize}
+	\item klient jest poprawnie zalogowany na stronie systemu SpeedCheck
+	\item klient chce wiedzieć, gdzie samochód zostal ostatnie widziany  
+	\item klient klika na podzakładkę “Wyszukać samochód”
+	\item system sprawdza, czy klient ma prawo do wyszukiwania innych samochodów niż jego własny(np. kilent jest pracownikem policji), jeśli tak - otworzy się strona wprowadzania danych, jeśli nie - system automatycznie wprowadza dane samochoda klienta.
+	\item otwiera się strona z danymi, na których kamerach i kiedy samochód zostal ostatnio oglądany 			widziany
+	\end{itemize}
+	
+	\subsection{Przegląd kamer monitorujących}
+	\begin{itemize}
+	\item klient jest poprawnie zalogowany na stronie systemu SpeedCheck
+	\item klient chce spojrzeć na kamery monitorujące online
+	\item klient klika na podzakładkę “Przegląd kamer online”
+	\item otworzy się strona wprowadzania danych kamery, którą klient chce spojrzeć
+	\item po wprowadzeniu danych system utworzy transmisję
+	\end{itemize}
+	
+	\subsection{Ustawienia limitu prędkości na kamerach}
+	\begin{itemize}
+	\item klient jest poprawnie zalogowany na stronie systemu SpeedCheck
+	\item klient chce ustawić limit prędkości na kamerach
+	\item klient klika na podzakładkę “Ustawienia limitu prędkości na kamerach”
+	\item otworzy się strona wprowadzania danych kamery oraz limitu prędkości (jeśli klient posiada na to prawo np. jest pracownikiem kontrolu ruchu)
+	\item po wprowadzeniu danych system ustawia limit oraz zapisuje do bazy danych numery samochodów, które
+	przekręcili limit prędkości	
+	\end{itemize}
+	
+	\subsection{Sprawdzenia wszystkich przekroczeń limitu prędkości samochodem}
+	\begin{itemize}
+	\item klient jest poprawnie zalogowany na stronie systemu SpeedCheck
+	\item klient chce sprawdzić wszystkie przekroczenia limitu prędkości samochodem
+	\item klient klika na podzakładkę “Sprawdzenia przekroczeń limitu”
+	\item system sprawdza, czy klient ma prawo do sprawdzenia innych samochodów niż jego własny(np. kilent 	jest pracownikem policji), jeśli tak - otworzy się strona wprowadzania danych, jeśli nie - system automatycznie wprowadza dane samochoda klienta.
+	\item otwiera się strona z danymi, gdzie i kiedy samochód przekręcil limit prędkości
+	\end{itemize}
+	
+\section{UI}
+Patrz katalog UI.
+
+\section{Architektura}
+
+\subsection{Sprzęt}
+	Jako server będziemy wykorzystywać AWS Elastic Compute Cloud (Amazon EC2) z 			wykorzystaniem Docker oraz AWS CloudFront(CDN). Wszystkie resursy bedą opisane w AWS 			CloudFormation w formacie yaml.
+    
+\subsection{Oprogramowanie}
+\begin{itemize}
+	\subsubsection{Narzędzia programistyczne}
+    	\item  Będziemy wykorzystywać Visual Studio Code z wtyczkami ułatwiającymi pracę nad
+		częścią kliencką, Yarn jako menadżer pakietów oraz przeglądarki Google Chrome i Mozilla
+		Firefox.
+        
+	\subsubsection{Bazy danych.}
+    	\item Jako Bazę Danych będziemy wykorzystować PostgreSQL.
+	\subsubsection {Oprogramowanie do automatycznego testowania.}
+    	\item Robot Framework z z biblioteką SeleniumLibrary.
+\end{itemize}
+
+
+\subsection{Model konceptualny}
+
+\includegraphics{model.png}
+
+
+\subsection{Schemat bazy danych}
+	%Patrz database.png
+\includegraphics{database.png}
+	
+\section{Główne zasady kodowania}
+\begin{itemize}
+	\item Google JavaScript Style Guide
+	\item PEP 8. Style Guide for Python Code
+\end{itemize}
+
+
+\section{Identyfikacja ryzyka}
+
+\subsection{Identyfikacja}
+\begin{itemize}
+	\item Ryzyko techniczne. Na przykład nie są pewni, czy dane wymaganie jest osiągalne, biorąc pod uwagę ograniczenia wynikające z istniejącej technologii.
+	\item Łańcuch dostaw. Na przykład możemy mieć problem z łatwym pozyskaniem sprzętu wysokiej jakości
+	\item Ryzyka wytworzenia. Czy jesteśmy w stanie wytworzyć kod szybko i wystarczająco niezawodnie, aby spełnić harmonogram i cele dotyczące wydatków projektu?
+	\item Zarządzanie programem. Duża zmiana zakresu w trakcie projektu.
+	\item Interpersonalne. Na przykład, jeśli brakuje skutecznej komunikacji między członkami zespołu programistycznego lub między zespołem a kierownictwem.
+	\item Nieznane zagrożenia. Nawet mając najlepsze planowanie i najlepsze intencje, nie da się znaleźć wszystkiego.
+\end{itemize}
+
+\subsection{Ocena ryzyka}
+\begin{itemize}
+\item Ryzyko techniczne. Dla zmniejszenia ryzyka wystąpienia zdarzenia możemy zrobić analizę podobnych projektów. Pierwszy raz robimy podobny projekt, więc prawdopodobieństwa wystąpienia jest wysokie.
+\item Łańcuch dostaw. Nie potrzebujemy unikatowego sprzętu dla pracy nad projektem, więc wystąpienie problem z tym zdarzeniem jest minimalne.
+\item Zarządzanie programem. Poświecimy dużo czasu na określenie specyfikacji projektu, aby zminimalizować wystąpienie tego zdarzenia.
+\item Interpersonalne. Tryb pracy zdalnej może mieć krytyczny wpływ na komunikację w zespole. 
+\item Nieznane zagrożenia. Wysokie prawdopodobieństwo wystąpienia niewiadomych zagrożeń.
+\end{itemize}
+
+\subsection{Planowanie}
+Z oceny ryzyka widzimy wysokie szansy na wystąpienia niekorzystnych dla projektu zdarzeń. Dla zapobiegania nim planujemy skorzystać z konsultacji menedżerów podobnych projektów. 
+
+\section{Ocena zgodności z tablicą koncepcyjną}
+	Ogólnie rezultaty są zgodne z tym co zostało przedstawione w tablicy
+	koncepcyjnej. Jedyną różnicą jest czas przeznaczony na testowanie produktu.
+	Stwierdziliśmy że zamiast 2 miesięcy, przeznaczymy na to 3 miesięcy
+
+\end{document}

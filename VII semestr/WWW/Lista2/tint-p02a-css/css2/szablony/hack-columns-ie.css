@@ -1,0 +1,50 @@
+div#container {
+    width: expression(
+        document.getElementById('body').offsetWidth > 1000?
+
+            // If the width of the body is greater than 1000 pixels
+            // set the max-width to 1000
+
+            1000
+        :
+            // If the width of the body is less than 1000, perform
+            // another check.
+
+            document.getElementById('body').offsetWidth > 750?
+
+                // If the width of the body is greater that 750 pixels, 
+                // but less than 1000 make it auto.
+
+                'auto'
+            :
+                // If the width of the body is 750 pixels or less,
+                // make the min-width of the container 750 pixels.
+
+                750
+    );
+    /* In IE, height behaves like min-height */
+    height: 400px;
+}
+div#first-column,
+div#third-column {
+    height: expression(
+        document.getElementById('container').offsetHeight - 10
+    );
+}
+div#content {
+    position: relative;
+    top: 3px;
+    height: 392px;
+}
+div#header,
+div#footer {
+    width: expression(
+        document.getElementById('body').offsetWidth > 994?
+            994
+        :
+            document.getElementById('body').offsetWidth > 744?
+                'auto'
+            :
+                744
+    );
+}

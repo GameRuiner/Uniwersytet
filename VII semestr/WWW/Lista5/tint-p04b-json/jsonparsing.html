@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JSON w JavaScript</title>
+  <meta name="description" content="Przyk³ad parsowania JSON w JavaScript">
+  <meta name="author" content="Pawe³ Rajba">
+  <script src="jquery-3.1.1.js" type="text/javascript"></script>
+  <script>
+	$(function() {
+		$.getJSON("dane.json", function(result) {
+			$("#tytul1").html(result.title);
+		});
+		
+		var p = JSON.parse('{ "title": "Kurs WWW", "semestr": "zimowy" }');
+		$("#tytul2").html(p.title);
+	});
+  </script>
+</head>
+
+<body>
+
+<h1 id="tytul1"></h1>
+
+<h1 id="tytul2"></h1>
+
+</body>
+</html>

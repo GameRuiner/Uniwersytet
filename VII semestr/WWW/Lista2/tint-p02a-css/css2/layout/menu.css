@@ -1,0 +1,193 @@
+/* -- BEGIN -- Menu 01 -- */
+
+#menu01 {
+	position: absolute; /* je¶li tego nie damy, to IE bêdzie siê zachowywa³ inaczej */
+	top: 10px; left: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: rgb(40,60,70);
+	background-color: rgb(220,230,235);
+	width: 200px;
+}
+
+#menu01 a, #menu01 a:active, #menu01 a:visited {
+	display: block;
+	color: rgb(40,60,70);
+	background-color: rgb(220,230,235);
+	text-decoration: none;
+	padding: 4px 4px 4px 20px;
+}
+
+#menu01 a:hover {
+	color: rgb(40,60,70);
+	background: #ffffcc url("orgball.gif") 4px 55% no-repeat;
+	text-decoration: underline;
+}
+
+/* --  END  -- Menu 01 -- */
+
+/* -- BEGIN -- Menu 02 -- */
+
+#menu02 {
+	position: absolute;
+	top: 10px; left: 250px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: rgb(40,60,70);
+	background-color: white;
+	width: 200px;
+	border-bottom: solid 1px rgb(100,150,160);
+}
+
+#menu02 a, #menu02 a:active, #menu02 a:visited {
+	display: block;
+	color: rgb(40,60,70);
+	background-color: white;
+	border-top: solid 1px rgb(100,150,160);
+	text-decoration: none;
+	padding: 4px 4px 4px 8px;
+}
+
+#menu02 a:hover {
+	color: rgb(40,60,70);
+	background-color: #ffffcc;
+	text-decoration: underline;
+}
+
+/* --  END  -- Menu 02 -- */
+
+/* -- BEGIN -- Menu 03 -- */
+
+#menu03 {
+	position: absolute;
+	top: 200px; left: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: rgb(40,60,70);
+	background-color: white;
+	width: 200px;
+}
+
+#menu03 a, #menu03 a:active, #menu03 a:visited {
+	border-right: solid 1px rgb(100,150,160);
+	border-left: solid 1px rgb(100,150,160);
+	margin-left: 2px;
+	margin-right: 2px;
+	display: block;
+	color: rgb(40,60,70);
+	background-color: white;
+	text-decoration: none;
+	padding: 4px 0px 4px 7px;
+}
+
+#menu03 a:hover {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 4px 0px 4px 5px;
+	border-right: solid 5px #334d55;
+	border-left: solid 5px #334d55;
+	color: rgb(40,60,70);
+	background-color: #ffffcc;
+	text-decoration: underline;
+}
+
+/* --  END  -- Menu 03 -- */
+
+/* -- BEGIN -- Menu 04 -- */
+
+#menu04 {
+	position: absolute;
+	top: 200px; left: 250px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: rgb(40,60,70);
+	background-color: white;
+	border-right: solid 1px rgb(100,150,160);
+	width: 200px;
+}
+
+#menu04 a, #menu04 a:active, #menu04 a:visited {
+	margin-right: 2px;
+	display: block;
+	color: rgb(40,60,70);
+	background-color: white;
+	text-decoration: none;
+	border-right: solid 1px rgb(100,150,160);
+	padding: 4px 4px 4px 8px;
+}
+
+#menu04 a:hover {
+	margin-right: 0px;
+	border-right: solid 3px rgb(100,150,160);
+	color: rgb(40,60,70);
+	background-color: #ffffcc;
+	text-decoration: underline;
+}
+
+/* --  END  -- Menu 04 -- */
+
+/* -- BEGIN -- Menu 05 -- */
+
+#menu05 {
+	position: absolute;
+	top: 390px; left: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: rgb(40,60,70);
+	background-color: rgb(240,247,247);
+	width: 200px;
+}
+
+#menu05 a, #menu05 a:active, #menu05 a:visited {
+	display: block;
+	color: rgb(40,60,70);
+	background-color: rgb(240,247,247);
+	text-decoration: none;
+	border-right: solid 1px #DDDDDD;
+	border-bottom: solid 1px #DDDDDD;
+	border-top: solid 1px white;
+	padding: 4px 4px 4px 8px;
+}
+
+#menu05 a:hover {
+	padding: 5px 2px 3px 10px;
+	margin-left: 0px;
+	color: rgb(40,60,70);
+	background-color: rgb(220,230,230);
+}
+
+/* --  END  -- Menu 05 -- */
+
+/* -- BEGIN -- Menu 06 -- */
+
+#menu06 {
+	position: absolute;
+	top: 390px; left: 250px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: rgb(40,60,70);
+	background-color: rgb(240,247,247);
+	width: 200px;
+}
+
+#menu06 a, #menu06 a:active, #menu06 a:visited {
+	display: block;
+	color: rgb(40,60,70);
+	background-color: rgb(240,247,247);
+	text-decoration: none;
+	border-left: solid 1px #EEEEEE;
+	border-right: solid 1px #DDDDDD;
+	border-bottom: solid 1px #DDDDDD;
+	border-top: solid 1px white;
+	padding: 4px 4px 4px 8px;
+}
+
+#menu06 a:hover {
+	border-right: solid 1px rgb(220,230,230);
+	border-bottom: solid 1px #EEEEEE;
+	border-left: solid 1px #AAAAAA;
+	border-top: solid 1px #AAAAAA;
+	text-decoration: underline;
+}
+
+/* --  END  -- Menu 06 -- */

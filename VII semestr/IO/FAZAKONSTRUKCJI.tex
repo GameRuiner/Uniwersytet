@@ -1,0 +1,273 @@
+
+\documentclass[12pt]{article}
+%%%\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % page settings
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage{latexsym}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\usepackage[pdftex]{graphicx}
+%\usepackage{vhistory}
+\usepackage[owncaptions]{vhistory}
+
+
+\usepackage[T1]{fontenc}
+
+\usepackage{epigraph}
+\setlength{\parskip}{1em}
+\title{SpeedCheck. Faza konstrukcji}
+\author{Marko Golovko. Yurii Purdenko}
+\date{\today}
+
+
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\renewcommand{\vhhistoryname}{Historia zmian}
+\newcommand{\MG}{Marko Golovko}
+\begin{versionhistory}
+  \renewcommand{\vhhistoryname}{Histria zmian}
+  \renewcommand{\vhversionname}{Numer wersji}  
+  \renewcommand{\vhdatename}{Data} 
+  \renewcommand{\vhauthorname}{Autor} 
+  \renewcommand{\vhchangename}{Opis}
+  \vhEntry{0.1}{14.12.20}{YP}{Utworzenie dokumentu}
+ \end{versionhistory}
+
+\tableofcontents
+
+\section{Testy funkcjonalne}
+
+\subsection{Wyszukiwanie samochodów}
+
+\subsubsection{User Story}
+\begin{itemize}
+\item Nazwa: Wyszukiwanie samochodu
+\item Historyjka użytkownika: Jako użytkownik, chce mieć możliwość wyszukiwania samochodu, aby widzieć go ostatnią lokalizację.
+\item Funkcjonalne kryteria akceptacji: 
+	\begin{itemize}
+	\item Strona wyświetla lokalizacje samochodu.
+	\item Jeżeli lokalizacja nie była znaleziona, wyświetla komunikat, że nie udało się znaleźć.
+	\item Jeżeli użytkownik nie ma prawa do wyszukiwania,  wyświetla komunikat, że nie ma prawa do wyszukiwania.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Use case}
+\begin{itemize}
+\item Tytul: Wyszukiwanie samochodu
+\item Aktor: Użytkownik
+\item Warunki początkowe: 
+	\begin{itemize}
+	\item Użytkownik muśi być zalogowany.
+	\item Użytkownik muśi mieć prawo do wyszukiwania samochodu.
+	\item Strona musi mieć pole do wyszukiwania.
+	\end{itemize}
+\item Zdarzenie inicujące: Użytkownik wpisuje numer samochodu w odpowiednie pole i klika przycisk wyszukiwania.
+\item Przebieg w krokach:
+	\begin{itemize}
+	\item Użytkownik loguje się na stronie.
+	\item Użytkownik wpisuje numer samochodu w odpowiednie pole i klika przycisk wyszukiwania
+	\item Strona wyświetla lokalizacje samochodu.
+	\end{itemize}
+\item Przebiegi alterantywne: 
+	\begin{itemize}
+	\item Wyszukiwany samochód nie był znaleziony.
+	\item Użytkownik nie ma prawa do wyszukiwania samochodu.
+	\end{itemize}
+\item Sytuacji wyjątkowe: Użytkownik jest pracownikiem policji i ma prawo do wyszukiwania dowolnego samochodu.
+\item Warunki końcowe:
+	\begin{itemize}
+	\item Strona wyświetla lokalizacje samochodu.
+	\item Albo strona wyświetla komunikat o nieudanej próbie.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Przegląd kamer monitorujących}
+
+\subsubsection{User Story}
+\begin{itemize}
+\item Nazwa: Przegląd kamer monitorujących
+\item Historyjka użytkownika: Jako użytkownik, chce mieć możliwość przeglądu kamer monitorujących, by wiedzieć o sytuacji na drogach
+\item Funkcjonalne kryteria akceptacji: 
+	\begin{itemize}
+	\item Strona wyświetla dostępne transmisji.
+	\item Jest możliwość filtracji za lokalizacją.
+	\item Jest możliwość oglądania kilku kamer(do 9) jednocześnie.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Use case}
+\begin{itemize}
+\item Tytul: Przegląd kamer monitorujących
+\item Aktor: Użytkownik
+\item Warunki początkowe: 
+	\begin{itemize}
+	\item Użytkownik muśi być zalogowany.
+	\item Strona ma dostępne transmisje
+	\item Użytkownik znajduje się w sekcji „Przegląd kamer online”
+	\end{itemize}
+\item Zdarzenie inicujące: Użytkownik klika na zakładkę „Przegląd kamer online”
+\item Przebieg w krokach:
+	\begin{itemize}
+	\item Użytkownik loguje się na stronie.
+	\item Użytkownik zaznacza lokalizacje kamer z transmisją.
+	\item Strona wyświetla transmisji.
+	\end{itemize}
+\item Przebiegi alterantywne: 
+	\begin{itemize}
+	\item Transmisji nie były znalezione.
+	\item Użytkownik dodaje kolejną transmisję do oglądania.
+	\end{itemize}
+\item Sytuacji wyjątkowe: Użytkownik chcę dodać więcej niż dziewięć transmisji na raz.
+\item Warunki końcowe:
+	\begin{itemize}
+	\item Strona wyświetla dostępne transmisji.
+	\item Albo strona wyświetla komunikat o nieudanej próbie.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Sprawdzenia przekroczeń limitu prędkości}
+
+\subsubsection{User Story}
+\begin{itemize}
+\item Nazwa: Sprawdzenia przekroczeń limitu prędkości
+\item Historyjka użytkownika: Jako użytkownik, chce mieć możliwość sprawdzenia przekroczeń limitu prędkości, by mieć możliwość zabezpieczyć bezpieczną sytuację na drogach.
+\item Funkcjonalne kryteria akceptacji: 
+	\begin{itemize}
+	\item Strona wyświetla dostępne transmisji.
+	\item Jest możliwość filtracji za lokalizacją.
+	\item Jest możliwość oglądania kilku kamer(do 9) jednocześnie.
+	\item Na transmisji jest pokazane przekroczenie prędkości.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Use case}
+\begin{itemize}
+\item Tytul: Sprawdzenia przekroczeń limitu prędkości
+\item Aktor: Użytkownik
+\item Warunki początkowe: 
+	\begin{itemize}
+	\item Użytkownik muśi być zalogowany.
+	\item Musi mieć prawo do sprawdzenia prędkości wszystkich samochodów (np. być pracownikiem policji).
+	\item Strona ma dostępne transmisje.
+	\item Użytkownik znajduje się w sekcji „Sprawdzenia przekroczeń limitu”.
+	\end{itemize}
+\item Zdarzenie inicujące: Użytkownik klika na zakładkę „Sprawdzenia przekroczeń limitu”
+\item Przebieg w krokach:
+	\begin{itemize}
+	\item Użytkownik loguje się na stronie.
+	\item Użytkownik zaznacza lokalizacje kamer z transmisją.
+	\item Strona wyświetla transmisji i pokazuje przekroczenia prędkości.
+	\end{itemize}
+\item Przebiegi alterantywne: 
+	\begin{itemize}
+	\item Transmisji nie były znalezione.
+	\item Użytkownik dodaje kolejną transmisję do oglądania.
+	\end{itemize}
+\item Sytuacji wyjątkowe: użytkownik nie jest pracownikiem policji i ma możliwość do sprawdzenia prędkości tylko własnego samochodu.
+\item Warunki końcowe:
+	\begin{itemize}
+	\item Strona wyświetla dostępne transmisji.
+	\item Strona pokazuje przekroczenia prędkości.
+	\item Albo strona wyświetla komunikat o nieudanej próbie.
+	\end{itemize}
+\end{itemize}
+
+\section{Pomiary spełnienia wymagań niefunkcjonalnych}
+    \subsection{Wymaganie niefunkcjonalne}
+    \begin{itemize}
+        \item \subsection{Szybkość aplikacji. aplikacja musi być szybka}
+              \begin{itemize}
+                    \item Pomiar: X = A/N 
+                    \item A = 
+              
+              \end{itemize}
+        \item Wykorzystanie pamięci operacyjnej. Sprawdzanie zajętości w procentach pamięci RAM	
+        \item Łatwość użycia. Test UX.
+        \item Niezawodność aplikacji. Sprawdzanie liczby błędów na liczbę godzin użytkowania.
+        \item Działanie aplikacji przy dużej liczbie użytkowników. Stress test.
+    \end{itemize}
+\section{Plan beta testowania}
+\subsection{Planowanie}
+Zdefiniowanie takich elementów:
+\begin{itemize}
+\item Zakres testów i cel testów
+\item Elementu testowego
+\item Funkcjonalności, które zostaną przetestowane
+\item Poziomy i typy testów
+\item Kryteria akceptacji
+\item Rzeczy które są dostarczane razem z testami
+\item Środowisko testowe
+\item Harmonogram
+\item Skład teamu 
+\item Ryzyka i zagrożenia
+\end{itemize}
+
+\subsection{Analiza}
+\begin{itemize}
+\item Określamy przedmiot testowy
+\item Określamy cel testowania
+\item Robimy spis funkcjonalności i możliwości, które będą testowane.
+\item Z otrzymanej informacji definiujemy ankiety testowe.
+\item Określamy elementy testowe
+\item Dokonujemy analizy ryzyka
+\end{itemize}
+
+\subsection{Projektowanie testów}
+\begin{itemize}
+\item Wyznaczamy poziomy testów dla konkretnych testowanych obszarów
+\item Wybieramy techniki projektowania 
+\item Tworzymy ankiety testowe
+\item Priorytetyzacja ankiet testowych
+\end{itemize}
+
+\subsection{Implementacja}
+\begin{itemize}
+\item Przygotowujemy środowisko testowe 
+\item Testują ochotnicy manualne
+\item Team testerów kieruje proces beta testowania
+\end{itemize}
+
+\subsection{Wykonanie testów}
+\begin{itemize}
+\item Użytkownicy wykonują testy na naszym elemencie testowym
+\item Po wykonaniu testów otrzymane wrażenie zapisują w zawartości aktualnej ankiety
+\item Ocenę użytkowników team testerów przetwarza w raport
+\item Zgodnie z raportem część przetestowanej funkcjonalności przechodzi z powrotem do fazy projektowania
+\item Zgodnie z uwzględnieniem pewnych odstępstw, plan może ulecz zmianie.
+\end{itemize}
+
+\subsection{Kontrola}
+\begin{itemize}
+\item Monitorowanie
+\item Raportowanie
+\item Nadzór
+\end{itemize}
+
+\subsection{Czynności zamykające testowanie}
+\begin{itemize}
+\item Sprawdzić, czy wszystko zostało dostarczone zgodnie z planem i dokumentacją
+\item Zarządzić błędami, czyli zamykanie notek, tworzenie nowych, edycja istniejących, jeśli jest taka potrzeba
+\item Utrzymywanie dokumentacji
+\item Prace niezbędne do utrzymania środowiska testowego i ponownego użycia w przyszłości
+\item Zorganizować spotkanie retrospektywne
+\item Zachować artefakty procesu testowego
+\end{itemize}
+
+\section{Plan zarządzania ryzykiem}
+
+
+\section{Plan zarządzania jakością wytwarzania oprogramowania}
+
+
+\section{Ocena zgodności wykonanych prac z wizją systemu i specyfikacją wymagań.}
+
+Rezultaty są zgodne z wizją systemu i specyfikacją wymagań.
+
+\end{document}

@@ -1,0 +1,28 @@
+dane_osobowe {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+  display: table;
+  empty-cells: show;
+  border-spacing: 4px;
+  border: 1px green solid;
+}
+
+osoba {
+  display: table-row;
+}
+
+opis {
+  font-size: larger;
+  font-weight: bolder;
+  display: table-caption;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+pesel, imie, nazwisko, adres, telefon, komorka {
+  empty-cells: show;
+  padding: 4px;
+  background-color: rgb(200, 255, 200);
+  display: table-cell;
+  border: 1px green solid;
+}

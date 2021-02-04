@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+
+<body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <ul name="items">
+     <li>Hola</li>
+     <li>Hello</li>
+   </ul>
+     
+   <input name="searchphrace"></input>
+</body>

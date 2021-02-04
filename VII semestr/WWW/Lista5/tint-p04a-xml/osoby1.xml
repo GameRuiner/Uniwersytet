@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding="ISO-8859-2"?>
+<?xml-stylesheet type="text/css" href="osoby1.css"?> 
+<!DOCTYPE dane_osobowe [
+  <!ELEMENT dane_osobowe (opis,(osoba)+)>
+  <!ELEMENT osoba (pesel, imie, nazwisko, adres, (telefon|komorka)?)>
+  <!ELEMENT opis (#PCDATA)>
+  <!ELEMENT pesel (#PCDATA)>
+  <!ELEMENT imie (#PCDATA)>
+  <!ELEMENT nazwisko (#PCDATA)>
+  <!ELEMENT adres (#PCDATA)>
+  <!ELEMENT telefon (#PCDATA)>
+  <!ELEMENT komorka (#PCDATA)>
+]>
+<dane_osobowe>
+<opis>Dane osobowe</opis>
+<osoba>
+<pesel>90121212345</pesel>
+<imie>Jan</imie>
+<nazwisko>Kowalski</nazwisko>
+<adres>55-140 Jelenia Góra 50</adres>
+<telefon>345 873 48</telefon>
+</osoba>
+<osoba>
+<pesel>82010447584</pesel>
+<imie>Andrzej</imie>
+<nazwisko>Kurczak</nazwisko>
+<adres>33-4454 Łosiów 60</adres>
+<komorka>607 234 123</komorka>
+</osoba>
+<osoba>
+<pesel>77080285763</pesel>
+<imie>Mietek</imie>
+<nazwisko>Mietkowski</nazwisko>
+<adres>80-220 Mietkowice, Mietków Dolny 50</adres>
+<telefon>23 482 389 222</telefon>
+</osoba>
+</dane_osobowe>

@@ -1,0 +1,41 @@
+ body {
+   font-family: Tahoma, Verdana, sans-serif;
+   font-size: small;
+ }
+ 
+ table.a {
+   margin: 0em auto;
+   border: solid 2px green;
+   border-collapse: separate;
+   border-spacing: 10px; /* Opera i Firefox obs³uguje, IE nie obs³uguje */
+   empty-cells: show;    /* Opera i Firefox obs³uguje, IE nie obs³uguje */
+ }
+ caption.a {
+   caption-side: top; /* warto¶æ bottom: Opera i Firefox obs³uguje, IE nie obs³uguje */
+   margin: 0em auto;  /* Potrzebne dla Firefox */
+   padding: 0px;
+   padding-bottom: 1em; /* Gdyby¶my dali margin-bottom: IE to oleje, reszta (Opera, Firefox) ok */
+   font-size: 12pt;
+   font-weight: bold;
+   color: green;
+   background-color: white;
+ }
+ td.a, th.a {
+   border: solid 1px green;
+   padding: 4px;
+ }
+ 
+ table.b {
+   margin: 0em auto;
+   border-collapse: collapse; /* alternatywnie separate */
+ }
+ td.b, th.b {
+   border: dotted 1px green; /* dashed i dotted w IE to to samo */
+   padding: 4px;
+ }
+ 
+ table.c { border-collapse: collapse; margin: auto}
+ td#c1   { border: solid 10px red;    padding: 1ex; font-weight: bold; }
+ td#c2   { border: solid 10px yellow; padding: 1ex; font-weight: bold; }
+ td#c3   { border: solid 10px green;  padding: 1ex; font-weight: bold; }
+ td#c4   { border: solid 10px blue;   padding: 1ex; font-weight: bold; }

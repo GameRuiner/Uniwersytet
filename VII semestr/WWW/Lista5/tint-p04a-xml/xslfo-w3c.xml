@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<fo:layout-master-set>
+  <fo:simple-page-master master-name="A4">
+   <fo:region-body/>
+  </fo:simple-page-master>
+</fo:layout-master-set>
+
+<fo:page-sequence master-reference="A4">
+
+<fo:flow flow-name="xsl-region-body">
+<fo:block
+    font-size="14pt" font-family="verdana" font-color="red"
+    space-before="5mm" space-after="5mm">
+W3Schools
+</fo:block>
+
+<fo:block
+    text-indent="5mm"
+    font-family="verdana" font-size="12pt"
+    space-before="5mm" space-after="5mm">
+At W3Schools you will find all the Web-building tutorials you
+need, from basic HTML and XHTML to advanced XML, XSL, Multimedia
+and WAP.
+</fo:block>
+
+</fo:flow>
+
+</fo:page-sequence>
+
+</fo:root>

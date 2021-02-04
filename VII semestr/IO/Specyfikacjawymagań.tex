@@ -1,0 +1,81 @@
+
+\documentclass[12pt]{article}
+%%%\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % page settings
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage{latexsym}
+\usepackage[polish]{babel}
+
+%\usepackage{vhistory}
+\usepackage[owncaptions]{vhistory}
+
+
+\usepackage[T1]{fontenc}
+
+\usepackage{epigraph}
+\setlength{\parskip}{1em}
+\title{SpeedCheck. Specyfikacja wymagań}
+\author{Marko Golovko. Yurii Purdenko}
+\date{\today}
+
+
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\renewcommand{\vhhistoryname}{Historia zmian}
+\newcommand{\MG}{Marko Golovko}
+\begin{versionhistory}
+  \renewcommand{\vhhistoryname}{Histria zmian}
+  \renewcommand{\vhversionname}{Numer wersji}  
+  \renewcommand{\vhdatename}{Data} 
+  \renewcommand{\vhauthorname}{Autor} 
+  \renewcommand{\vhchangename}{Opis}
+  \vhEntry{0.1}{08.11.20}{MG}{Utworzenie dokumentu}
+  \vhEntry{0.2}{08.11.04}{MG}{Określenie wymagań}
+  \vhEntry{0.3}{13.11.20}{MG}{Korekta dokumentu}
+\end{versionhistory}
+
+\tableofcontents
+
+\section{Określenie wymagań}
+\subsection{Historyjki użytkownika}
+\begin{itemize}
+\item Jako użytkownik chce wyszukiwać samochód za numerem, aby ułatwić znalezienie skradzionego samochodu.
+\item Jako użytkownik (np. pracownik służby kontroli ruchu) chce mieć dostęp do oglądania transmisji z kamer, aby natychmiastowo reagować na wypadki drogowe.
+\item Jako użytkownik (np. pracownik służby kontroli ruchu) chce widzieć prędkość samochodów, aby mieć możliwość uprzedzić kierowcę o przekroczeniu limitu prędkości.
+\end{itemize}
+\subsection{Główne systemy składowe}
+\subsubsection*{Wyszukiwanie samochodów}
+System wyszukiwania zaciekawi głównie użytkowników będących pracownikami policji. Po nadaniu danych o skradzionym samochodzie system wyszukuje trafienia w nagraniach i na żywo. Precyzyjne wyszukiwanie dostępne za numerem samochodu, ale nie zawsze  system może zdefiniować numer samochodu z nagrania, więc dostępne dodatkowe parametry dla wyszukiwania np. lokalizacja, czas lub kolor samochodu. 
+\subsubsection*{Oglądanie transmisji z kamer}
+System oglądania transmisji daje możliwość użytkowniku oglądać sytuację na drogach na żywo. Użytkownik może wybrać lokalizację, która go interesuje. Razem s transmisją użytkownik otrzymuję statu stanu drogi i limit prędkości na danym odcinku.  Jest możliwość multitransmicji. 
+\subsubsection*{Oglądanie nagrań z bazy danych}
+Nagranie z kamer przechowywane przez 30 dni. Użytkownik ma możliwość wybrania lokalizacji i czasu nagrania.
+\subsection{Wymagania funkcjonalne}
+\begin{itemize}
+\item Wyszukiwanie samochodu. Użytkownik wprowadza potrzebne dane, system wypisuję listę trafień.
+\item Oglądanie kamer na żywo. Użytkownik wprowadza potrzebne dane, system wypisuje listę dostępnych transmisji.
+\item Oglądanie nagrań. Użytkownik wprowadza potrzebne dane, system wypisuje listę nagrań zgodnie z danymi użytkownika.
+\item Informowanie o przekroczeniu prędkości. Użytkownik wybiera interesujące go translacji i ustawia system na alarmowanie przy przekroczeniu prędkości.
+\item Dodawanie transmisji do systemu. Administrator wpisuje potrzebne dany i ustawia transmisję.
+\item Oglądanie multitransmicji. Użytkownik może oglądać do 9 transmisji jednocześnie..
+\item Możliwość rejestracji użytkowników. Profil użytkownika ma dane o trafieniach na kamerach i historię oglądanych transmisji i nagrań. 
+\item Możliwość pobrania fragmentu nagrania. Użytkownik może pobrać fragment nagrania w formacie mp4.
+\item Możliwość wbudowania transmisji na stronę użytkownika. Za pomocą wygenerowanego fragmentu kodu użytkownik pobiera informacje o transmisji dla wbudowania na swojej stronie.
+\item Możliwość proponowania transmisji przez użytkowników. Użytkownik może dodać dane do transmisji, i administrator rozpatrzy propozycję.
+\end{itemize}
+\subsection{Wymagania niefunkcjonalne}
+\begin{itemize}
+\item Szybkość aplikacji. Sprawdzanie liczby transakcji na sekundę.
+\item Wykorzystanie pamięci operacyjnej. Sprawdzanie zajętości w procentach pamięci RAM	
+\item Łatwość użycia. Test UX.
+\item Niezawodność aplikacji. Sprawdzanie liczby błędów na liczbę godzin użytkowania.
+\item Działanie aplikacji przy dużej liczbie użytkowników. Stress test.
+\end{itemize}
+\section*{Przypadki użycia}
+
+\end{document}

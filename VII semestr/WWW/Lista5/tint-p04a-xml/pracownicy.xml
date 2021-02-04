@@ -1,0 +1,41 @@
+<?xml version = "1.0" encoding="ISO-8859-2"?>
+<!DOCTYPE pracownicy [
+  <!ENTITY % kraje SYSTEM "pracownicy-encje.ent">
+  %kraje;
+  <!ELEMENT pracownicy (kierownik | handlowiec | biurowiec)+>
+  <!ELEMENT kierownik (pesel, imie, nazwisko, adres, (telefon|komorka)?, kraj)>
+  <!ELEMENT handlowiec (pesel, imie, nazwisko, adres, (telefon|komorka)?, kraj)>
+  <!ELEMENT biurowiec (pesel, imie, nazwisko, adres, (telefon|komorka)?, kraj)>
+  <!ELEMENT pesel (#PCDATA)>
+  <!ELEMENT imie (#PCDATA)>
+  <!ELEMENT nazwisko (#PCDATA)>
+  <!ELEMENT adres (#PCDATA)>
+  <!ELEMENT telefon (#PCDATA)>
+  <!ELEMENT komorka (#PCDATA)>
+  <!ELEMENT kraj (#PCDATA)> 
+]>
+<pracownicy>
+<kierownik>
+<pesel>90121212345</pesel>
+<imie>Helmut</imie>
+<nazwisko>Zeit</nazwisko>
+<adres>55-140 Monachium 50</adres>
+<telefon>34587348</telefon>
+<kraj>&de;</kraj>
+</kierownik>
+<handlowiec>
+<pesel>82010447584</pesel>
+<imie>Andrzej</imie>
+<nazwisko>Kurczak</nazwisko>
+<adres>33-4454 Łosiów 60</adres>
+<kraj>&pl;</kraj>
+</handlowiec>
+<biurowiec>
+<pesel>77080285763</pesel>
+<imie>Mietek</imie>
+<nazwisko>Mietkowski</nazwisko>
+<adres>80-220 Mietkowice, Mietków Dolny 50</adres>
+<telefon>234823892</telefon>
+<kraj>&pl;</kraj>
+</biurowiec>
+</pracownicy>

@@ -1,0 +1,178 @@
+
+\documentclass[12pt]{article}
+%%%\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % page settings
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage{latexsym}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\usepackage[pdftex]{graphicx}
+%\usepackage{vhistory}
+\usepackage[owncaptions]{vhistory}
+
+
+\usepackage[T1]{fontenc}
+
+\usepackage{epigraph}
+\setlength{\parskip}{1em}
+\title{SpeedCheck. Faza wprowadzenie na rynek}
+\author{Marko Golovko. Yurii Purdenko}
+\date{\today}
+
+
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\renewcommand{\vhhistoryname}{Historia zmian}
+\newcommand{\MG}{Marko Golovko}
+\begin{versionhistory}
+  \renewcommand{\vhhistoryname}{Histria zmian}
+  \renewcommand{\vhversionname}{Numer wersji}  
+  \renewcommand{\vhdatename}{Data} 
+  \renewcommand{\vhauthorname}{Autor} 
+  \renewcommand{\vhchangename}{Opis}
+  \vhEntry{0.1}{30.01.21}{MG}{Utworzenie dokumentu}
+  \vhEntry{0.2}{30.01.21}{MG}{Oszacowanie pojemności bazy danych aplikacji}
+  \vhEntry{0.3}{30.01.21}{YP}{Koncepcja organizacji szkoleń użytkowników}
+  \vhEntry{0.4}{31.01.21}{YP}{Sformułowanie głównych punktów umów}
+  \vhEntry{0.5}{1.02.21} {MG} {Plan wdrożenia}
+  \vhEntry{0.6}{1.02.21} {YP} {Koncepcja wsparcia technicznego}
+  \vhEntry{1}  {1.02.21} {MG} {Sposób pomiaru satysfakcji klienta}
+ \end{versionhistory}
+
+\tableofcontents
+
+\section{Oszacowanie pojemności bazy danych aplikacji}
+Baza danych ma następujące tabele:
+\begin{itemize}
+\item \textbf{users}: tabela zawierająca dane użytkowników 
+	\begin{itemize}
+		\item \textbf{Wielkość wiersza (bajty):} 100
+		\item \textbf{Wiersze na początku eksploatacji:} 0
+		\item \textbf{Łączna wielkość:} 0 MB
+		\item \textbf{Oszacowanie miesięcznego przyrostu (wierszy):} 1000
+		\item \textbf{Oszacowanie miesięcznego przyrostu:} <1 MB
+	\end{itemize}
+\item \textbf{carsLocation}: tabela zawierająca miejsca znalezienia samochodów
+	\begin{itemize}
+		\item \textbf{Wielkość wiersza (bajty):} 8
+		\item \textbf{Wiersze na początku eksploatacji:} 0
+		\item \textbf{Łączna wielkość:} 0 MB
+		\item \textbf{Oszacowanie miesięcznego przyrostu (wierszy):} ilość godzin działania kamer*250
+		\item \textbf{Oszacowanie miesięcznego przyrostu:} przyrost wierszy * 8 
+	\end{itemize}
+\item \textbf{speeding}: tabela zawierająca dane o przekroczeniu prędkości 
+	\begin{itemize}
+		\item \textbf{Wielkość wiersza (bajty):} 12
+		\item \textbf{Wiersze na początku eksploatacji:} 0
+		\item \textbf{Łączna wielkość:} 0 MB
+		\item \textbf{Oszacowanie miesięcznego przyrostu (wierszy):} ilość godzin działania kamer*10
+		\item \textbf{Oszacowanie miesięcznego przyrostu:} przyrost wierszy * 12 
+	\end{itemize}
+\item \textbf{car}: tabela zawierająca dane o samochodach
+	\begin{itemize}
+		\item \textbf{Wielkość wiersza (bajty):} 40
+		\item \textbf{Wiersze na początku eksploatacji:} 0
+		\item \textbf{Łączna wielkość:} 0 MB
+		\item \textbf{Oszacowanie miesięcznego przyrostu (wierszy):} ilość godzin działania kamer*250 - powtarzające się samochody
+		\item \textbf{Oszacowanie miesięcznego przyrostu:} przyrost wierszy * 40 
+	\end{itemize}
+\item \textbf{location}: tabela zawierająca dane lokalizacji kamer
+	\begin{itemize}
+		\item \textbf{Wielkość wiersza (bajty):} 50
+		\item \textbf{Wiersze na początku eksploatacji:} 10
+		\item \textbf{Łączna wielkość:} < 1 MB
+		\item \textbf{Oszacowanie miesięcznego przyrostu (wierszy):} 50
+		\item \textbf{Oszacowanie miesięcznego przyrostu:} < 1 MB
+	\end{itemize}
+\item \textbf{cameras}: tabela zawierająca dane kamer
+	\begin{itemize}
+		\item \textbf{Wielkość wiersza (bajty):} 100
+		\item \textbf{Wiersze na początku eksploatacji:} 10
+		\item \textbf{Łączna wielkość:} < 1 MB
+		\item \textbf{Oszacowanie miesięcznego przyrostu (wierszy):} 50
+		\item \textbf{Oszacowanie miesięcznego przyrostu:} 60 GB zawartości kamery * 50
+	\end{itemize}
+\item \textbf{permisions}: tabela zawierająca role użytkowników. Rozmiar wiersza 40 bajtów.  Łączna wielkość i przyrost jest mniejszy od 1 MB. 
+\end{itemize}
+
+Informacja niezbędna do rozpoczęcia eksploatacji aplikacji:
+\begin{itemize}
+\item tabela \textbf{permisions}
+\item 10 pracujących kamer z danymi w tabelach \textbf{cameras} i \textbf{location}
+\end{itemize}
+
+
+\section{Plan wdrożenia}
+
+\begin{itemize}
+	\item Przygotowanie dokumentacji powykonawczej (zawiera szczegółowy opis wykonanych czynności instalacyjnych oraz konfiguracyjnych
+wszystkich komponentów systemu)
+	\item Przygotowanie i skonfigurowanie infrastruktury technicznej (konfigurowanie kamer i transmisji)
+	\item Zainstalowanie i skonfigurowanie systemu informatycznego do testów
+	\item Testowanie systemu
+	\item Testowa migracja danych
+	\item Zainstalowanie i skonfigurowanie systemu informatycznego do eksploatacji
+	\item Uruchomienie produkcyjne systemu - rozpoczęcie pracy przez użytkowników
+\end{itemize}
+
+
+\section{Koncepcja organizacji szkoleń użytkowników}
+	\begin{itemize}
+    \item Stworzenie dokumentu opisującego stronę, jej funkcjonalności, treści w niej
+	zawartych. Dokument ten można zamieścić na stronie głównej serwisu (do użytku
+	użytkowników, jako krótki poradnik).
+    \item Szkolenie funkcjonariuszy kontroli ruchu i policji w zakresie wszystkich funkcji systemu (jak szukać samochodu, jak analizować odpowiedź z bazy danych, jak przeglądać kamery itp.)
+	\item Szkolenie zespołu obsługi klienta (szkolenie poprawnej rozmowy z klientem, umiejętności odpowiadania na pytania dotyczące systemu itp.)
+    \item Szkolenie administratorów serwera
+	\item Szkolenie administratorów systemu w zakresie sprawdzania dokumentów i dodawania nowych 
+	klientów do bazy danych
+    \end{itemize}
+Po szkoleniu i kilku miesiącach pracy otrzymamy 'feedback' od klientów i poprawimy wszystkie błędy.
+
+
+\section{Koncepcja wsparcia technicznego}
+Aby uzyskać pomoc techniczną, będzie dostępna sekcja „FAQ”, dostępna również pomoc przez czat dostępny na stronie systemu.
+Będzie też zespół administratorów systemu i programistów do rozwiązywania problemów technicznych zglaszanych przez klientów.
+
+\section{Sformułowanie głównych punktów umów}
+
+Wprowadzimy kompleks umów:
+	\begin{itemize}
+ 	\item Umowę o analizę przedwdrożeniową
+ 	\item Umowę wdrożeniową
+	\item Umowę prawnoautorską
+ 	\item Umowę serwisową
+ 	\item Umowę o zakresie usług serwisowych( Usuwanie błędów, wsparcie techniczne itp.)
+ 	\end{itemize}
+ Także użyjemy pewnej formy gwarancji należytego wykonania umowy  dla gwarancji  płynności finansowej w postaci:
+ \begin{itemize}
+ \item Gwarancji bankowej
+ \item Gwarancje ubezpieczeniowej
+ \end{itemize}
+Szczególną uwagę przydzielimy opisowi kryteriów, procedury i metod odbioru produktu IT.
+
+
+\section{Sposób pomiaru satysfakcji klienta}
+
+\subsection*{Współczynnik retencji klienta}
+Dla stałych użytkowników (np. pracowników policji) będziemy stosować współczynnik retencji klienta.
+Wzór na współczynnik retencji klienta = ((E-N) / S) x 100
+Do obliczenia współczynniku retencji klienta, potrzebujemy trzech informacji:
+\begin{itemize}
+	\item Liczba nowych klientów w danym okresie (N)
+	\item Liczba klientów na koniec danego okresu (E)
+	\item Liczba klientów na początku danego okresu (S)
+\end{itemize}
+
+\subsection*{Rozwiązanie sprawy klienta w pierwszym kontakcie}
+Dla użytkowników (np. pracowników policji) będziemy stosować współczynnik rozwiązanie sprawy klienta w pierwszym kontakcie.
+Mierzymy obliczając stosunek zgłoszeń klientów rozwiązanych „od ręki” – w pierwszym kontakcie – do wszystkich zgłoszeń i mnożony przez 100%
+
+\end{document}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<title>Simple page</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="fonts/Fonts.css" />
+<style>
+#horizontal {
+	display: flex;
+	flex-direction: row;
+}
+#horizontal > div:nth-child(1) {
+	background-color:lightgreen;
+	flex: 4 4 250px;
+}
+#horizontal > div:nth-child(2) {
+	background-color:lightblue;
+	flex: 8 8 250px;
+}
+#horizontal > div:nth-child(3) {
+	background-color:magenta;
+	flex: 1 1 250px;
+}
+</style>
+</head>
+<body>
+
+<div id="horizontal">
+	<div>Box 1</div>
+	<div>Box 2</div>
+	<div>Box 3</div>
+</div>
+
+</body>
+</html>

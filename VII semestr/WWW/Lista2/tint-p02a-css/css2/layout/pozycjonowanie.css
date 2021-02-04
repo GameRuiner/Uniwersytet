@@ -1,0 +1,47 @@
+ body {  font-family: Arial, Helvetica, sans-serif;  font-size: 12pt;  }
+ 
+ div.szmaragd {
+   border: dotted 1px green;  width: 200px;
+   color: black;
+   background-color: rgb(200,255,200);
+ } 
+ #szmaragd {  position: relative;  left: 60px;  top: 30px;  }
+ 
+ #menu-absolutne {
+   position: absolute;  top: 10px;  right: 10px;  width: 200px;
+   border: dotted 1px green;  color: black;  background-color: rgb(200,255,200);  padding: 4px;
+ }
+ #banner {
+   position: fixed;  top: 10px;  right: 35%;  width: 300px;
+   border: solid 2px red;  background-color: rgb(255,200,200);
+   text-align: center;  padding: 4px;  font-weight: bold;  color: red;
+ }
+ 
+ #ramka {
+   position: absolute;  top: 120px;  right: 10px;  width: 300px;  height: 300px;  overflow: scroll;
+   border: dashed 2px blue;  color: black;  background-color: rgb(200,200,255);
+   text-align: center;  padding: 2px;
+ }
+ 
+ #przyciety {
+   position: absolute;  top: 680px;  right: 20px;  width: 200px;  clip: rect(20px, 45px, 120px, 170px);
+   border: dotted 1px green;  color: black;  background-color: rgb(150,255,200);
+ }
+
+ div.zindex {  position: absolute;  overflow: hidden;  border: dotted 1px green;  padding: 4px;  color: black; }
+ 
+ div.zindex#zindex1 {
+   top: 450px;  right: 150px;  width: 100px;  height: 100px;  z-index: 1;  background-color: rgb(240,255,200);    
+ }
+ 
+ div.zindex#zindex2 {
+   top: 480px;  right: 130px;  width: 100px;  height: 100px;  z-index: 2;  background-color: rgb(210,255,200);  
+ }
+ 
+ div.zindex#zindex3 {
+   top: 510px;  right: 110px;  width: 100px;  height: 100px;  z-index: 3;  background-color: rgb(180,255,200);  
+ }
+ 
+ div.zindex#zindex4 {
+   top: 540px;  right: 90px;  width: 100px;  height: 100px;  z-index: 3;  background-color: rgb(150,255,200);  
+ }

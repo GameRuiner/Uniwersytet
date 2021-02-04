@@ -1,0 +1,14 @@
+W informatyce protokół bezstanowy to protokół komunikacyjny, w którym żadne informacje o sesji nie są przechowywane przez odbiorcę, zwykle serwer. 
+Odpowiednie dane sesji są wysyłane do odbiorcy przez klienta w taki sposób, że każdy przesyłany pakiet informacji może być zrozumiany oddzielnie, 
+bez informacji kontekstowych z poprzednich pakietów w sesji. Ta właściwość protokołów bezstanowych czyni je idealnymi w aplikacjach o dużej objętości, 
+zwiększając wydajność poprzez usuwanie obciążenia serwera spowodowanego zatrzymywaniem informacji o sesji.
+
+Protokół bezstanowy nie wymaga, aby serwer zachowywał informacje o sesji lub status każdego komunikującego się partnera przez czas trwania wielu żądań. 
+Natomiast protokół, który wymaga utrzymywania stanu wewnętrznego na serwerze, jest nazywany protokołem stanowym. 
+Sesja TCP zorientowana na połączenie jest połączeniem stanowym, ponieważ oba systemy przechowują informacje o samej sesji podczas jej trwania.
+
+Konstrukcja bezstanowa upraszcza projekt serwera, ponieważ nie ma potrzeby dynamicznego przydzielania pamięci do obsługi trwających konwersacji. 
+Jeśli sesja klienta kończy się w trakcie transakcji, żadna część systemu nie musi być odpowiedzialna za czyszczenie aktualnego stanu serwera. 
+Wadą bezpaństwowości może być konieczność dołączenia dodatkowych informacji do każdego żądania, 
+a te dodatkowe informacje będą musiały zostać zinterpretowane przez serwer.
+

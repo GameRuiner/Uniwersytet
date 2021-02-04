@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<title>Simple page</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<style>
+* { font-family: Arial, sans-serif; font-size: 10pt; }
+input { display: block; margin-bottom:15px; }
+</style>
+</head>
+<body>
+
+<form>
+<label for="search">Search:</label>
+<input type="search" id="search" name="search" />
+
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" placeholder="First and last name" />
+
+<label for="email">E-mail:</label>
+<input type="email" id="email" name="email" placeholder="Email please..." />
+
+<label for="url">URL:</label>
+<input type="url" id="url" name="url" />
+
+<label for="tel">Phone:</label>
+<input type="tel" id="tel" name="tel" />
+
+<label for="date">Date:</label>
+<input type="date" id="date" name="date" />
+
+<label for="datetime">Datetime:</label>
+<input type="datetime" id="datetime" name="datetime" value="2012-02-02T14:45:00+02:00" />
+
+<label for="datetime-local">Datetime-local:</label>
+<input type="datetime-local" id="datetime-local" name="datetime-local" />
+
+<label for="month">Month:</label>
+<input type="month" id="month" name="month" />
+
+<label for="weekdd">Week:</label>
+<input type="week" id="weekdd" name="weekdd" />
+
+<label for="time">Time:</label>
+<input type="time" id="time" name="time" />
+
+<label for="color">Color:</label>
+<input type="color" id="color" name="color" />
+
+<label for="range">Range:</label>
+<input type="range" id="range" name="range" min="5" max="45" step="5" value="35" />
+
+<label for="number">Number:</label>
+<input type="number" id="number" name="number" min="5" max="45" step="5" value="35" />
+
+<label for="number">Colours:</label>
+<input type="text" id="datalist" name="colours" list="colours" />
+<datalist id="colours">
+<option value="red">
+<option value="green">
+<option value="blue">
+</datalist>
+
+</form>
+
+</body>
+</html>

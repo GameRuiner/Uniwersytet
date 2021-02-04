@@ -1,0 +1,11 @@
+setpencolor [250 4 249]
+fd 100 
+rt 144
+fd 100 
+rt 144
+fd 100 
+rt 144
+fd 100 
+rt 144
+fd 100 
+rt 144

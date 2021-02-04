@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<?xml-stylesheet type="text/xsl" href="produkty3.xsl"?>  
+
+<dostawy>
+
+<dostawa>
+<data_dostawy>2005-10-10</data_dostawy>
+<produkt produktid="44324">
+ <nazwa>Batonik Kitkat</nazwa>
+ <ilosc>152</ilosc>
+ <jednostka>szt.</jednostka>
+ <cena>1.50</cena>
+</produkt>
+<produkt produktid="22322">
+ <nazwa>Batonik Snickers</nazwa>
+ <ilosc>77</ilosc>
+ <jednostka>szt.</jednostka>
+ <cena>1.72</cena>
+</produkt>
+<dostawca>
+ <nazwa>Kogucik S.A.</nazwa>
+ <adres>ul. Ptasia 20</adres>
+ <tel_stacjonarny>71/333 44 55 66</tel_stacjonarny>
+</dostawca>
+</dostawa>
+
+</dostawy>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type='text/javascript'>
+    function GetMap() {
+        var map = new Microsoft.Maps.Map('#myMap', {
+            credentials: 'Agk36i7miymtjmyLvbAZueyrBfZaMHtgaZMbKAd43bxIRbUgXUUE_I-yNL1cppzO',
+            center: new Microsoft.Maps.Location(51.113752, 17.036359),
+            zoom: 12
+        });
+
+        infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+            visible: false
+        });
+
+       infobox.setMap(map);
+        
+       Microsoft.Maps.Events.addHandler(map, 'dblclick', function (e) { addPin(e); });
+      
+      var counter = 1;
+      var focusedLi = null;
+      var focusedPin = null;
+      
+      function addPin(e) {
+         map.setOptions({ disableZooming: true });
+         
+         var pin = new Microsoft.Maps.Pushpin(e.location, {
+            title: 'Wrocław',
+            subTitle: 'pin',
+            color: 'blue',
+            text: counter+''
+        });
+
+        map.entities.push(pin);
+
+        $("#pushList").append(`<li tabindex="${counter}" id="${counter}" >${counter} ${e.location}</li>`);
+
+        
+        $( "#pushList" ).children().last().focus(function() {
+            focusedLi = e.location;
+            focusedPin = pin;
+         });
+         
+        counter += 1;
+        setTimeout(function(){ map.setOptions({ disableZooming: false }); }, 1);
+        }
+        
+        $( "#btnShow").click(function() {
+            infobox.setOptions({
+                location: focusedLi,
+                title: "To tutaj",
+                visible: true
+            });
+        });
+
+        $( "#btnRemove").click(function() {
+            var index = map.entities.indexOf(focusedPin);
+            $( "#pushList" ).children().each(function( i ) {
+                if (i == index) {
+                    $(this).remove();
+                }
+                
+            });
+            map.entities.removeAt(index);
+        });
+
+
+    }
+    </script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+</head>
+<body>
+    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+	<button id="btnShow"> Pokaż </button>
+    <button id="btnRemove"> Usuń </button>
+    <ul id="pushList">
+    </ul>
+</body>
+</html>

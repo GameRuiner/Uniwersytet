@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <title>Formularze</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+ <meta http-equiv="Content-Language" content="pl">
+ <link rel="StyleSheet" type="text/css" href="layout/formularze-screen.css" media="screen">
+ <link rel="StyleSheet" type="text/css" href="layout/formularze-print.css" media="print">
+</head>
+
+<body>
+
+<h2>Rejestracja do portalu Stowarzyszenia Romantycznych Owieczek</h2>
+
+<form action="#" method="get">
+<table cellspacing="0">
+<tr class="wymagane">
+ <td class="clabel">Imię:</td>
+ <td class="cinput"><input class="tekst" name="imie" type="text" size="40" maxlength="40">
+</tr>
+<tr class="wymagane">
+ <td class="clabel">Nazwisko:</td>
+ <td class="cinput"><input class="tekst" name="nazwisko" type="text" size="40" maxlength="40">
+</tr>
+<tr class="wymagane">
+ <td class="clabel">eMail:</td>
+ <td class="cinput"><input class="tekst" name="email" type="text" size="40" maxlength="40"></td>
+</tr>
+<tr class="wymagane">
+ <td class="clabel">Miejscowość:</td>
+ <td class="cinput"><input class="tekst" name="adres" type="text" size="40" maxlength="40"></td>
+</tr>
+<tr class="wymagane">
+ <td class="clabel">Data urodzenia:</td>
+ <td class="cinput"><span id="pusty">&nbsp</span>
+     <input class="tekst ukryj" name="dzien" type="text" size="2" maxlength="2">
+     <select class="tekst" name="miesiac">
+      <option value="1">stycznia</option>
+      <option value="2">lutego</option>
+      <option value="3">marca</option>
+      <option value="4">kwietnia</option>
+      <option value="5">maja</option>
+      <option value="6">czerwca</option>
+      <option value="7">lipca</option>
+      <option value="8">sierpnia</option>
+      <option value="9">września</option>
+      <option value="10">pażdzienika</option>
+      <option value="11">listopada</option>
+      <option value="12">grudnia</option>
+     </select>
+     <input class="tekst ukryj" name="rok" type="text" size="4" maxlength="4"></td>
+</tr>
+<tr class="opcjonalne">
+ <td class="clabel">Płeć:</td>
+ <td class="cinput"><input name="plec" type="radio" value="m">Mężczyzna <input name="płeć" type="radio" value="k">Kobieta</td>
+</tr>
+<tr class="opcjonalne">
+ <td class="clabel">Ulubiony kolor wełny</td>
+ <td class="cinput"><input class="tekst" name="kolorwelny" type="text" size="40" maxlength="40"></td>
+</tr>
+<tr class="opcjonalne">
+ <td class="clabel">Telefon</td>
+ <td class="cinput"><input class="tekst" name="telefon" type="text" size="40" maxlength="40"></td>
+</tr>
+<tr class="opcjonalne">
+ <td class="clabel">Zainteresowania:</td>
+ <td class="cinput"><input name="zainteresowania[0]" type="checkbox" value="1">Film
+     <input name="zainteresowania[1]" type="checkbox" value="1">Muzyka
+     <input name="zainteresowania[2]" type="checkbox" value="1">Polityka
+     <input name="zainteresowania[3]" type="checkbox" value="1">Sport
+ </td>
+</tr>
+<tr><td class="wyslij" colspan="2"><input class="wyslij" type="submit" value="Zarejestruj!"></td></tr>
+
+</table>
+</form>
+
+</body>
+</html>
+

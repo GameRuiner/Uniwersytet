@@ -1,0 +1,14 @@
+div#content {
+    position: relative;
+    top: 3px
+}
+div#first-column {
+    top: 3px;
+}
+div#third-column {
+    bottom: 3px;
+}
+div#container {
+    margin-top: -3px;
+    margin-bottom: -3px;
+}

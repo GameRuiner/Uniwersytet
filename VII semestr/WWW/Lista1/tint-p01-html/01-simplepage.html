@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<title>Simple page</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<script>function doThat() { alert('xxx'); }</script>
+<style>
+* { font-family: Arial, sans-serif; }
+</style>
+</head>
+<body>
+<header>
+	<a href="#">
+			<h1>Tytuł strony</h1>
+			<h2>Podtytuł strony</h2>
+	</a>
+	<nav>
+		<ul>
+			<li><a href="#">Strona główna</a>
+			<li><a href="#">Galeria</a>
+			<li><a href="#">Kontakt</a>
+		</ul>
+	</nav>
+</header>
+<section>
+<header><h2>Newsy</h2></header>
+<time datetime="1905-11-13T09:00"></time>
+<article>
+	<h3>News 1</h3>
+	<div>Siakaś treść</div>
+	<div>Oblicz ratę</div>
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0<input type="range" name="a" value="50">100+<input type="number" name="b" value="50">=<output name="x" for="a b"></output></form>
+</article>
+<article>
+	<h3>News 2</h3>
+	<div>Siakaś <mark>ważna</mark> treść</div>
+
+</article>
+<aside>Najczęściej odwiedzane
+<ul>
+<li><a href="#">Link1</a>
+<li><a href="#">Link2</a>
+<li><a href="#">Link3</a>
+</ul>
+<progress max="100" value="30"></progress>
+<meter min="100" max="200" value="150">50%</meter>
+</aside>
+</section>
+<footer>
+<nav>
+		<ul>
+			<li><a href="#">Strona główna</a>
+			<li><a href="#">Galeria</a>
+			<li><a href="#">Kontakt</a>
+		</ul>
+		</nav>
+<details>
+<summary>Podsumowanie</summary>
+<div>opis 1</div>
+<div>opis 2</div>
+</details>
+</footer>
+</body>
+</html>

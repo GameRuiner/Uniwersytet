@@ -1,0 +1,1 @@
+Przyk³ady w tym folderze pochodz¹ z ksi¹¿ki: Richard York, Gotowe rozwi¹zania. CSS, Helion 2007
