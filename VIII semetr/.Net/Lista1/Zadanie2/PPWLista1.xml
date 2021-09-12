@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PPWLista1</name>
+    </assembly>
+    <members>
+        <member name="T:PPWLista1.Grid">
+            <summary>
+            Grid class.
+            Contains contains constructor and indexers.
+            </summary>
+        </member>
+        <member name="F:PPWLista1.Grid.container">
+            <value>Grid container</value>
+        </member>
+        <member name="M:PPWLista1.Grid.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Create new grid
+            </summary>
+            <remarks>
+            This could create two dimensional grid
+            </remarks>
+        </member>
+        <member name="P:PPWLista1.Grid.Item(System.Int32)">
+            <returns>
+            I-th row.
+            </returns>
+        </member>
+        <member name="P:PPWLista1.Grid.Item(System.Int32,System.Int32)">
+            <returns>
+            Element with indexes y and y
+            </returns>
+        </member>
+    </members>
+</doc>

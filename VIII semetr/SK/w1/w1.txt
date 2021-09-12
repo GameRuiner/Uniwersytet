@@ -1,0 +1,12 @@
+firefox
+dwa nagłowki
+Server: ECS (dcb/7EC9 dcb/7F80)
+
+host -t a example.org
+93.184.216.34
+
+Internet Protocol Version 4, Src: 10.0.2.15, Dst: 93.184.216.34
+Transmission Control Protocol, Src Port: 55578, Dst Port: 80, Seq: 1, Ack: 1, Len: 330 
+
+Internet Protocol Version 4, Src: 93.184.216.34, Dst: 10.0.2.15
+Transmission Control Protocol, Src Port: 80, Dst Port: 55578, Seq: 1, Ack: 331, Len: 1005

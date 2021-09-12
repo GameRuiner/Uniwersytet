@@ -1,0 +1,24 @@
+MATCH
+  (a:Person)-[r:acted_in]->(movie)
+WHERE a.name = 'Marlon Brando' 
+RETURN movie
+
+MATCH
+  (a:Person)-[:DIRECTED]->(b:Movie)
+  WHERE (a)-[:PRODUCED]->(b) AND a.name='Nancy Meyers'
+RETURN b
+
+MATCH (p:Person)
+WHERE NOT (p)-[:ACTED_IN]-()
+RETURN p
+
+MATCH (p:Person)-[r:ACTED_IN]->()
+WITH p, count(r) as c
+WHERE c > 3
+RETURN p
+
+MATCH (m:Movie)<-[r:ACTED_IN]-()
+WITH m, count(r) as c
+RETURN m
+ORDER BY c DESC
+LIMIT 1

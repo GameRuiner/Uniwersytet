@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Company>
+  <Student firstName = "Marko" lastName="Golovko" index="297354" >
+      <Address city="Wroclaw" zip="50-363"></Address>
+      <Address city="Kharkiv" zip="50-018"></Address>
+      <Course  name=".Net" grade="5"></Course>
+      <Course  name="DB" grade="5"></Course>
+      <Course  name="ADS" grade="3"></Course>
+  </Student>
+</Company>

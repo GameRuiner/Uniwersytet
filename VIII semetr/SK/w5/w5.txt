@@ -1,0 +1,50 @@
+Przed zajęciami
+
+sudo ip link set enp0s3 name enp0
+
+
+Tutorial 1
+
+sudo dhclient enp0
+
+??
+sudo ip link set up dev enp0
+sudo ip link set down dev enp0
+
+
+Tutorial 2
+
+sudo ip link set up dev enp0
+
+sudo ip addr add 192.168.0.1/24 dev enp0
+sudo ip addr add 192.168.0.2/24 dev enp0
+
+
+
+Tutorial 3
+
+
+sudo ip addr del 192.168.0.2/24 dev enp0 && sudo ip addr add 192.168.0.123/24 dev enp0
+
+sudo ip addr del 192.168.0.2/24 dev enp0
+
+
+
+Wyzwanie
+
+sudo ip link set enp0s3 name enp0
+sudo ip link set up dev enp0
+
+sudo ip addr add 192.168.1.1/24 dev enp0
+Broadcast 192.168.1.255
+
+sudo ip addr add 192.168.1.2/25 dev enp0
+Broadcast 192.168.1.127
+
+sudo ip addr add 192.168.1.129/24 dev enp0
+Broadcast 192.168.1.255
+
+sudo ip addr add 192.168.1.130/25 dev enp0
+Broadcast 192.168.1.255
+
+

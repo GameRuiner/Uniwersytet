@@ -1,0 +1,11 @@
+t2
+
+sudo ip link set up dev enp-rem
+
+sudo ip addr add 172.16.0.1/16 dev enp-rem
+
+ping 172.16.0.2
+
+t3
+
+ip link set enpxsy name enp-loc

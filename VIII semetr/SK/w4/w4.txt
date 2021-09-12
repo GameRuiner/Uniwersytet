@@ -1,0 +1,84 @@
+Przed zajęciami
+
+sudo ip link set enpxsy name enp-rem
+
+sudo ip link set up dev enp-rem1
+sudo ip addr add 192.168.1.1/24 dev enp-rem1
+sudo ip addr add 192.168.1.2/24 dev enp-rem1
+
+
+sudo ip link set up dev enp-rem2
+sudo ip addr add 192.168.2.2/24 dev enp-rem2
+sudo ip addr add 192.168.2.3/24 dev enp-rem2
+
+sudo ip link set up dev enp-rem3
+sudo ip addr add 192.168.3.3/24 dev enp-rem3
+sudo ip addr add 192.168.3.4/24 dev enp-rem3
+
+sudo ip link set up dev enp-rem4
+sudo ip addr add 192.168.4.1/24 dev enp-rem4
+sudo ip addr add 192.168.4.4/24 dev enp-rem4
+
+
+
+Tutorial 1
+
+sudo ip route add default via 192.168.1.2
+sudo ip route add default via 192.168.2.3
+sudo ip route add default via 192.168.3.4
+sudo ip route add default via 192.168.4.1
+
+sudo ip route flush default
+
+
+Tutorial 2
+
+systemctl restart ospf
+no network adres sieci area 0
+sudo ip link set down dev enp-rem4
+
+
+sudo touch /etc/quagga/ospfd.conf
+sudo touch /etc/quagga/zebra.conf
+sudo touch /etc/quagga/vtysh.conf
+sudo systemctl start ospfd
+
+sudo vtysh
+configure terminal
+router ospf
+network 192.168.1.0/24 area 0
+network 192.168.2.0/24 area 0
+network 192.168.2.0/24 area 0
+network 192.168.3.0/24 area 0
+
+sudo ip link set enp0s9 name enp-all
+sudo ip link set up dev enp-all
+sudo ip addr add 172.16.16.x/24 dev enp-all
+
+network 172.16.0.0/16 area 0
+
+Wyzwanie
+
+sudo ip link set enpxsy name enp-loc
+
+sudo ip link set up dev enp0
+sudo ip addr add 192.168.1.1/24 dev enp-loc
+sudo ip addr add 192.168.1.2/24 dev enp-loc
+sudo ip addr add 192.168.1.3/24 dev enp-loc
+
+
+sudo ip link set up dev enp1
+sudo ip addr add 192.168.2.1/24 dev enp1
+
+sudo ip link set up dev enp-out
+sudo ip addr add 192.168.2.2/24 dev enp1
+
+
+sudo ip route add default via 192.168.1.2
+sudo ip route add default via 192.168.1.3
+sudo ip route add default via 192.168.2.1
+
+
+
+
+
